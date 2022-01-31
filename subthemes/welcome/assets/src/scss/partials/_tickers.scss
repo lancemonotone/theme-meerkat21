@@ -1,0 +1,26 @@
+body.m20-subtheme-welcome {
+    .ticker {
+        .fl-rich-text {
+            display: block;
+            width: 100%;
+            max-width: none;
+            text-align: center;
+
+            p {
+                font-family: EphOctic;
+                font-weight: Bold;
+                font-size: 17px;
+                line-height: 19px;
+                text-transform: uppercase;
+                display: block;
+                width: 100%;
+
+                span {
+                    color: $magenta;
+                    text-align: center;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

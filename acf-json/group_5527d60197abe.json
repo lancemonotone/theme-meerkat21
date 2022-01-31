@@ -1,0 +1,91 @@
+{
+  "key": "group_5527d60197abe",
+  "title": "Related Content",
+  "fields": [
+    {
+      "key": "field_5527d6107c947",
+      "label": "Related Content",
+      "name": "related_content",
+      "prefix": "",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "min": "",
+      "max": "",
+      "layout": "table",
+      "button_label": "Add Row",
+      "sub_fields": [
+        {
+          "key": "field_5527d64c7c949",
+          "label": "Label",
+          "name": "related_content_label",
+          "prefix": "",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "maxlength": "",
+          "readonly": 0,
+          "disabled": 0
+        },
+        {
+          "key": "field_5527d6327c948",
+          "label": "URL",
+          "name": "related_content_url",
+          "prefix": "",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "maxlength": "",
+          "readonly": 0,
+          "disabled": 0
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "site_id",
+        "operator": "==",
+        "value": "194"
+      },
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": ""
+}

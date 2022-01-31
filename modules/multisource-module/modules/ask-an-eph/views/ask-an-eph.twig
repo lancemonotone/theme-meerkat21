@@ -1,0 +1,13 @@
+<div class="fl-post-carousel fl-post-carousel-{{ template }}" {{ itemscope }} >
+    {# Render the navigation #}
+    {% if 'yes' == settings.navigation %}
+        {% include 'navigation.twig' %}
+    {% endif %}
+    <div class="fl-post-carousel-wrapper">
+        {% for post in posts %}
+            {% include 'modules/loop.twig' with {'post' : post.context} %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="fl-clear"></div>

@@ -1,0 +1,81 @@
+{
+    "key": "group_5f29a755624d7",
+    "title": "SOA 200 Events Field",
+    "fields": [
+        {
+            "key": "field_5f29a76f1ca6b",
+            "label": "When",
+            "name": "when",
+            "type": "date_time_picker",
+            "instructions": "Select the date and time of the event.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "n\/j\/Y \\a\\t g:ia \\E\\T",
+            "return_format": "n\/j\/Y \\a\\t g:ia \\E\\T",
+            "first_day": 1
+        },
+        {
+            "key": "field_5f29a7b89b85e",
+            "label": "Where",
+            "name": "where",
+            "type": "text",
+            "instructions": "Enter where the event is going to be held.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fb41a0aa91e2",
+            "label": "Event URL",
+            "name": "event_url",
+            "type": "url",
+            "instructions": "The link to the event sign up page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "276"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1635191936
+}

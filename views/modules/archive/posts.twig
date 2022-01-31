@@ -1,0 +1,25 @@
+{% if catopts.do_display('facetwp_search') %}
+    {# Check for custom post type or category #}
+    {% set cpt = facets.facetwp_is_cpt() %}
+    {% if cpt %}
+        {% include 'modules/archive/facetwp_cpt_search.twig' with {'cpt': cpt} %}
+    {% else %}
+        {% include 'modules/archive/facetwp_category_search.twig' %}
+    {% endif %}
+{% endif %}
+
+{# Filters, template or default posts list #}
+
+{% if catopts.do_display('facetwp_filters') %}
+
+    {% include 'modules/archive/facetwp_filters.twig' %}
+
+{% elseif catopts.do_display('facetwp_template') %}
+
+      {% include 'modules/archive/facetwp_template.twig' %}
+    
+{% else %}
+    <div class="facetwp-template">
+      {% include 'modules/archive/posts_loop.twig' %}
+    </div>
+{% endif %}

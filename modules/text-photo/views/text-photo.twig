@@ -1,0 +1,10 @@
+{%set curbkg = Image(settings.background_image) %}
+
+<div class="photo-w-text-module-{{node}}" style="background-image: url('{{curbkg}}')" >
+    <a href="{{settings.tp_link}}" class="tp-gradient-overlay-{{node}} {{settings.tp_header_class}}">
+        <h2 style="color:#{{settings.header_color}};" class="tp-header-{{node}}"><span>{{settings.photo_header_text}}</span></h2>
+        <p style="color:#{{settings.text_color}};" class="tp-text-{{node}}">{{settings.photo_body_text}}</p>
+    </a>
+</div>
+
+

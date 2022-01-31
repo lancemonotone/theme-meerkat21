@@ -1,0 +1,44 @@
+{
+  "key": "group_54fdb401d4c2c",
+  "title": "Navigation",
+  "fields": [
+    {
+      "key": "field_50523d38972qq",
+      "label": "Where is your faculty\/staff page?",
+      "name": "staff_url",
+      "prefix": "",
+      "type": "post_object",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "post_type": [
+        "page"
+      ],
+      "taxonomy": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "return_format": "object",
+      "ui": 1
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "acf-options"
+      }
+    ]
+  ],
+  "menu_order": 1,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": ""
+}

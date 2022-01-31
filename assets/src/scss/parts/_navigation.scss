@@ -1,0 +1,38 @@
+#megaoverlay {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: $column_gap;
+
+    h3 {
+        @extend %visuallyhidden;
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    #megaoverlay {
+        display: grid;
+        grid-template-columns: 50% repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr 1fr;
+        padding: #{$column_gap * 4};
+
+        .global-navigation>ul {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-gap: $column_gap;
+            gap: $column_gap;
+
+        }
+
+        .social-navigation {
+            padding: $column_gap 0;
+
+            >ul {
+                display: flex;
+            }
+        }
+    }
+}

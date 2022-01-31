@@ -1,0 +1,44 @@
+<footer id="colophon" role="contentinfo">
+{# @todo Restructure section footer #}
+    {% if (site.blog_id != constant('WWW_BLOG_ID')) or (site.blog_id == constant('WWW_BLOG_ID') and page != 'home') %}
+        {% include 'modules/section_footer.twig' %}
+    {% endif %}
+    <div class="site-footer">
+        <div class="content-wrap">
+            <a aria-label="Go to Williams College Homepage" class="wordmark" href="{{ constant('WWW_BLOG_URL') }}" title="{{ __('Go to') }} Williams College">
+                {% include 'modules/svg.twig' with {
+                    'img_dir':constant('THEME_IMG_URL'),
+                    'url':'/wordmark_stacked_wms_college.svg',
+                } %}
+            </a>
+
+            {% if options.hide_site_footer or (site.blog_id == constant('WWW_BLOG_ID')) or (site.blog_id == '247') %}
+                {# home and events show the school address #}
+
+                <address>
+                    <span>Hopkins Hall</span>
+                    <span>880 Main Street</span><br/>
+                    <span>Williamstown, MA 01267</span>
+                    <span>USA</span><br/>
+                    <span><a href="tel:413.597.3131"><span class="screen-reader-text">Williams College Phone Number </span>(413) 597-3131</a></span>
+                </address>
+
+            {% endif %}
+
+        <div class="footer-links">
+            <a href="#page">Back to top</a>
+            <a class="extra-link" href="//www.williams.edu/privacy/">Privacy Policy</a>
+            <a class="extra-link" href="//www.williams.edu/feedback/?source_url={{ post.link }}">Comment Form</a>
+
+            {% if fn('is_user_logged_in') %}
+                {% if fn('user_can_for_blog', site.id, 'edit_posts', user.ID) %}
+                    <a class="extra-link" href="{{ site.home }}/wp-admin/" title="Dashboard">Dashboard</a>
+                {% endif %}
+                {{ fn('do_shortcode', '[logout_to_home text="Log Out"]') }}
+            {% else %}
+                {{ fn('do_shortcode', '[login text="Log In"]' ) }}
+            {% endif %}
+             </div>
+        </div>
+
+</footer><!-- .site-footer -->

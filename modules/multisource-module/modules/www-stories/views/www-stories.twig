@@ -1,0 +1,38 @@
+<div class="homepage-top">
+  {% for post in posts|slice(0,1) %}
+  <a
+    href="{{ post.link }}"
+    data-gtmtext="Story {{ loop.index }}"
+    class="hometrack"
+    tabindex="-1"
+  >
+    <img
+      src="{{ post.thumbnail.file_loc|tojpg|resize(700, 500)
+    }}"
+      alt="{{ post.thumbnail._wp_attachment_image_alt }}"
+    />
+  </a>
+
+  <a
+    href="{{ post.link }}"
+    class="hometrack link-{{ loop.index }}"
+    data-gtmtext="Story {{ loop.index }}"
+  >
+    {% if post.story_label != "" %}
+    <span class="slide-cat">{{ post.story_label }}</span
+    >{% endif %}
+    {{ post.post_excerpt }}
+  </a>
+  {% endfor %} {% for post in posts2|slice(0,2) %}
+  <a
+    href="{{ post.link }}"
+    class="hometrack link-{{ loop.index + 1 }}"
+    data-gtmtext="Story {{ loop.index + 1 }}"
+  >
+    {% if post.story_label != "" %}
+    <span class="slide-cat">{{ post.story_label }}</span
+    >{% endif %}
+    {{ post.post_excerpt }}
+  </a>
+  {% endfor %}
+</div>

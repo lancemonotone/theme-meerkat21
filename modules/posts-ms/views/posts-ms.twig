@@ -1,0 +1,30 @@
+
+
+<div id="alumnistories-wrapper" >
+    <span class="unfiltereddark fixedwidth"> <h2 class="post-ms-header"><span>{{section_header}}</span></h2></span>
+    <div id="alumnistories" data-moduletype="alumnistories" >
+      {% if posts %}
+        {% for post in posts %} 
+
+            {% set imgurl = post.thumbnail %}
+
+            <div class="alumni-story">
+              <picture>
+                  
+                   {# <source srcset="{{ imgurl|towebp }}" type="image/webp"> #}
+                    <source srcset="{{ imgurl|retina(1) }} 1x,
+                        {{ imgurl|retina(2) }} 2x,
+                        {{ imgurl|retina(3) }} 3x,
+                        {{ imgurl|retina(4) }} 4x">
+                    <img src="{{ imgurl|tojpg }}" alt="{{ post.alt ?: post.caption }}">
+                      <a class="title" href="{{ post.permalink }}"><span>{{ post.post_title }}</span></a>
+            </picture>
+
+            </div>
+        {% endfor %}
+      {% else %}
+        <div class="error" style="text-align: center;">No stories match the chosen criteria.</div>
+      {% endif %}
+    </div>
+
+</div>

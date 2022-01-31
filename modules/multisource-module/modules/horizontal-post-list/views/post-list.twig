@@ -1,0 +1,20 @@
+<div  class="horizontal-post-list {{ settings.class }}">
+  {% for post in posts|slice(0,3) %}
+  <div class="featured_2-{{ loop.index + 3 }}">
+    <a
+      href="{{ post.link }}"
+      class="hometrack"
+      data-gtmtext="{{ settings.id }} {{ loop.index + 3 }}"
+    >
+      {% if post.story_label %}
+      <span class="slide-cat">{{ post.story_label }}</span>
+      {% endif %}
+      <img
+        src="{{ post.thumbnail.file_loc|resize(179, 148, 'bottom')  }}"
+        alt="{{ post.thumbnail._wp_attachment_image_alt }}"
+      />
+      <div>{{ post.post_excerpt ? post.post_excerpt : post.post_title }}</div>
+    </a>
+  </div>
+  {% endfor %}
+</div>

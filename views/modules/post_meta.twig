@@ -1,0 +1,11 @@
+{% if catopts.do_display('author') or catopts.do_display('date') %}
+    <div class="post-meta">
+        {% if catopts.do_display('author') %}
+            {% set join_string = catopts.do_display('date') ? ', ' %}
+            {% include 'modules/author_byline.twig' with {'join_next': join_string} %}
+        {% endif %}
+        {% if catopts.do_display('date') %}
+            {% include 'modules/date.twig' %}
+        {% endif %}
+    </div>
+{% endif %}

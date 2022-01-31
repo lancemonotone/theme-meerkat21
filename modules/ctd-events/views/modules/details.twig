@@ -1,0 +1,4 @@
+{# Don't format the <a> tag. Whitespace will break. #}
+<div class='event-meta'>
+<a href="{{ detail.detail_url }}">{{ detail.daymonth }} {{ detail.date }}{% if detail.venue %}<span class="sep">|</span>{{ detail.venue }}{{ detail.room ? ', ' ~ detail.room }}{% endif %}{% if detail.time %}<span class="sep">|</span>{{ detail.time }}{% endif %}</a>
+</div>

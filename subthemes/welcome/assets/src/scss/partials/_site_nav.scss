@@ -1,0 +1,84 @@
+/**
+ Put all selectors inside this block
+ */
+body.m20-subtheme-welcome {
+  #heads-up {
+    nav {
+      ul {
+        li {
+          border: 5px solid transparent !important;
+          left: 0;
+
+          a {
+            background-color: transparent;
+            color: $dark_purple;
+            opacity: 1;
+            font-family: "EphOctic";
+            font-weight: bold;
+            font-size: 14px;
+
+            &:hover,
+            &:focus {
+              text-decoration: none;
+            }
+          }
+
+          .dropdown-toggle {
+            color: $dark_purple;
+
+            &:after {
+              line-height: 2;
+              border-color: $dark_purple;
+              font-weight: 1000;
+            }
+          }
+        }
+
+        &.nav-drop {
+          border: none;
+
+          li {
+            border: none;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    &.sticky ul.menu {
+      padding: 11px 50px;
+    }
+  }
+
+  #heads-up .nav-item.last-toplevel-nav-item ul.nav-drop {
+    border-right: none;
+  }
+
+  @media only screen and (min-width: 910px) {
+    #heads-up {
+      nav {
+        ul {
+          li {
+            .dropdown-toggle {
+              top: calc(50% - 0.5em);
+
+              &:after {
+                line-height: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #heads-up .nav-item.last-toplevel-nav-item ul.nav-drop li a.nav-link {
+      padding: 2px 13px 2px 2px;
+      color: $williams_purple;
+    }
+
+    #heads-up .nav-item ul.nav-drop li a.nav-link {
+      padding: 2px 2px 2px 17px;
+      color: $williams_purple;
+    }
+  }
+}

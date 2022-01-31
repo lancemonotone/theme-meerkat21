@@ -1,0 +1,35 @@
+/**
+ * This file should contain styles that will be applied to
+ * all module instances within a builder layout.
+ */
+
+@import "import";
+
+div[class^="photo-w-text-module"] {
+  background-size: cover;
+}
+
+[class^="tp-gradient-overlay"] {
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.unfilteredlight,
+.unfiltereddark {
+  p[class^="tp-text"] {
+    margin-top: 8px;
+  }
+}
+.fl-module-text-photo {
+  .type-video {
+    display: block;
+  }
+}

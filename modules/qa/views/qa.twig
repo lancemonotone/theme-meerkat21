@@ -1,0 +1,33 @@
+
+ {# {{ settings|json_encode}}  #}
+{% set questions = settings.qa_form %}
+
+{% if questions %}
+    <div class="questions" style="color:#{{ settings.header_color }};">
+        {% for question in questions %}
+        <div class="question">
+            {% if question.qa_question %}
+                <h3 class="qa-question"> {{ question.qa_question }} </h3>
+            {% else %}
+                {# no question, answer only #}
+            {% endif %}
+            {% for answer in question.a_form %}
+                <div class="answer"><span class="aname">{{ answer|json_decode.aname }}</span> 
+                 {% if answer|json_decode.pulltext %}  
+                        <aside class="pquote">
+                                <blockquote>
+                                        <p>{{answer|json_decode.pulltext}}</p>
+                                </blockquote>
+                        </aside>
+                  {% endif %} 
+                {{ answer|json_decode.a_text }}
+                
+                    
+                </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
+</div>
+{% else %}
+    <div class="error" style="text-align: center;">Add some questions!</div>
+{% endif %}

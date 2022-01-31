@@ -1,0 +1,18 @@
+{# {{ settings|json_encode}} #}
+{% if settings.menu_header %}
+    <h3 class="ctaheader" style="color:#{{ settings.header_color }};">{{ settings.menu_header }}</h3>
+{% endif %}    
+{% if ctas %}
+ <span class="cta-bar" style="color:#{{ settings.header_color }};">
+        {% for cta in ctas %} 
+           
+            <a href="{{cta.CTA_link}}" class="cta-link {{cta.CTA_link_class}}" style="color:#{{ settings.link_color }};">{{cta.CTA_text}}</a>
+            {% if not loop.last %}<span class="sep">/</span>{% endif %}
+           
+        {% endfor %}
+</span>
+{% else %}
+        <div class="error" style="text-align: center;">Add some links!</div>
+{% endif %}
+
+

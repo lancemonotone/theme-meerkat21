@@ -1,0 +1,42 @@
+body.m20-subtheme-welcome {
+    .fw-cta {
+        padding: 20px 0px;
+
+        .fl-rich-text {
+            max-width: none;
+        }
+
+        p {
+            font-family: EphSerif;
+            font-weight: 500;
+            font-size: 30px;
+            font-style: italic;
+            line-height: 32px;
+
+            a {
+                color: #fff;
+                text-decoration: underline;
+                text-decoration-skip: ink;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: 3px;
+                text-underline-offset: 2px;
+            }
+        }
+    }
+
+    /*********************
+    DESKTOP 985
+    *********************/
+    @media only screen and (min-width: $desktop) {
+        .fw-cta {
+
+            p {
+
+                font-size: 37px;
+                line-height: 41px;
+
+            }
+        }
+    }
+
+}

@@ -1,0 +1,5 @@
+<span class="breadcrumb {{ breadcrumb.class }}">
+    {% if breadcrumb.url %}<a class="{{ breadcrumb.class }}" aria-label="breadcrumb" href="{{ breadcrumb.url }}">
+    {% endif %} {{ breadcrumb.name }}{% if breadcrumb.url %}
+    </a>{% endif %}
+</span>

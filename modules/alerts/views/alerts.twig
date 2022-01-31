@@ -1,0 +1,13 @@
+{% if alert %}
+
+    {% if settings.icon  %}
+        <div class="fl-icon-wrap">
+            <span class="fl-icon">
+                <i class="{{settings.icon}}"></i>
+            </span>
+        </div>
+    {% endif %}
+    <a class="alert-link" href="{{ alert.alert_link ? alert.alert_link : alertpage }}">{{alert.alert_text}}</a>
+    <a  id="alert-close" class="{{ alert.hide_close ? 'hidden' : '' }}"data-alert="{{hideid}}"><svg class="icon icon--close"><use xlink:href="#icon-close" ></use></svg></a>
+
+{% endif %}

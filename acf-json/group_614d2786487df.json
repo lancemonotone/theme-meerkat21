@@ -1,0 +1,48 @@
+{
+    "key": "group_614d2786487df",
+    "title": "Photographer\/Illustrator",
+    "fields": [
+        {
+            "key": "field_614d279939d92",
+            "label": "Photographer\/Illustrator",
+            "name": "story_artist",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "magazine"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635191936
+}

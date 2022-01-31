@@ -1,0 +1,139 @@
+@import "import";
+
+:root {
+    --career-path-btn-bkg: #EBF5FF;
+    --career-path-btn-hover: #497476;
+}
+
+#filter-swap {
+    max-width: 1550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    :nth-child(1) {
+        order: 1;
+        flex-basis: 15%;
+    }
+
+    :nth-child(2) {
+        order: 2;
+        flex-basis: 15%;
+    }
+
+    :nth-child(3) {
+        order: 3;
+        flex-basis: 70%;
+    }
+
+    .bigpic img {
+        width: 100%;
+    }
+}
+
+.filters-bar {
+    position: relative;
+    background-color: transparent;
+
+    &:before, &:after {
+        content: '';
+        height: calc(100% - 2em);
+        pointer-events: none;
+        position: absolute;
+        top: 1em;
+        width: 10px;
+        z-index: 2;
+    }
+
+    &:before {
+        right: 0;
+    }
+
+    &:after {
+        left: 0;
+    }
+
+    ul {
+        display: inline-block;
+        flex-wrap: nowrap;
+        overflow: auto;
+        padding: 1em 0;
+
+        li {
+            padding: 0 8px;
+            white-space: nowrap;
+            list-style: none;
+            font-size: 13px;
+            font-weight: 700;
+
+            button, button:visited {
+                margin: 0 5px 3px 0;
+                text-decoration: none;
+                padding: 1px 12px;
+                border-radius: 32px;
+                font-size: 13px;
+                font-weight: 500;
+                background: #fff;
+                border: 1px solid lightgrey;
+                display: inline-block;
+
+                &:hover {
+                    background: var(--career-path-btn-bkg);
+                    border-color: var(--career-path-btn-hover);
+                }
+
+                &.curImage {
+                    border: 2px solid var(--career-path-btn-hover);
+                    padding: 0 11px;
+                }
+            }
+        }
+    }
+}
+
+/*********************
+MOBILE 350
+*********************/
+@media only screen and (min-width: $mobile_zoom) {
+}
+
+/*********************
+MOBILE 710
+*********************/
+@media only screen and (min-width: $mobile_portrait) {
+}
+
+/*********************
+MOBILE LANDSCAPE 783
+*********************/
+@media only screen and (min-width: $mobile_landscape) {
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+}
+
+/*********************
+DESKTOP 985
+*********************/
+@media only screen and (min-width: $desktop) {
+}
+
+/*********************
+LARGE 1200
+*********************/
+@media only screen and (min-width: $large) {
+    #filter-swap {
+        :nth-child(2) {
+            order: 3;
+        }
+
+        :nth-child(3) {
+            order: 2;
+        }
+    }
+}

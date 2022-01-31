@@ -1,0 +1,71 @@
+@import "import";
+/*********************
+BASE
+*********************/
+ h3.ctaheader{
+    font-family: IBM Plex Sans, Helvetica Neue, sans-serif;;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+}
+a.cta-link{
+    border: 0; 
+    border-radius: 0.25rem; 
+    background: none;
+    font-family:  IBM Plex Mono, monospace;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+    font-style: normal;
+    font-family: IBM Plex Mono, monospace;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 0 0 8px 0;
+    line-height: normal;
+    vertical-align: text-top;
+    display: block;
+    &:hover{
+        text-decoration: none;
+    }
+}
+.cta-bar{
+    line-height: 22px;
+    color: #000000;
+    font-style: normal;
+    font-family: IBM Plex Mono, monospace;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 14px;
+    .sep{
+        display: none;
+        padding: 0 4px 0 6px; 
+
+    }
+}
+
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    h3.ctaheader{
+        padding-bottom: 0;
+    }
+    a.cta-link{
+        display: inline;
+        padding: 0;
+    }
+    .cta-bar{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: row;
+        .sep{
+            display: inline;
+        }
+    }
+}

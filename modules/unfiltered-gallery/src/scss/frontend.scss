@@ -1,0 +1,15 @@
+
+.ug-location{
+    display: none;
+    .fl-builder-edit &{
+        display: inline-block;
+        color: #fff;
+        background-color: #000000;        
+    }
+}
+/*keep captions on the screen in featherlight*/
+.featherlight .featherlight-content > .featherlight-image {
+    max-height: 75vh !important;
+    object-fit: contain;
+    width: auto !important;
+}

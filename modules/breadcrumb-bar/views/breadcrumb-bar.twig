@@ -1,0 +1,12 @@
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-{{ node }} wms-breadcrumb-bar" data-node="{{ node }}">
+    <div class="fl-row-content-wrap">
+        <div id="breadcrumbs" class="breadcrumbs" aria-label="breadcrumb home">
+            {% for breadcrumb in breadcrumbs %}
+                {% include 'modules/one_crumb.twig' with {'breadcrumb' : breadcrumb} %}
+                {% if not loop.last %}
+                    <span class="breadcrumb-sep"></span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

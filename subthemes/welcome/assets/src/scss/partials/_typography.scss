@@ -1,0 +1,162 @@
+body.m20-subtheme-welcome {
+  .split-level {
+    span {
+      padding-left: 1em;
+      text-indent: -1em;
+      display: block;
+    }
+  }
+
+  .cta-bar a.cta-link {
+    font-family: EphOctic;
+    color: $magenta;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0px;
+  }
+
+  .huge-title {
+
+    h3 span,
+    .fl-heading-text {
+      font-family: EphSlab;
+      font-size: 50px;
+      font-style: normal;
+    }
+  }
+
+  .big-title {
+
+    h3 span,
+    .fl-heading-text {
+      font-family: EphSlab;
+      font-weight: 500;
+      font-size: 36px;
+      font-style: normal;
+      line-height: 40px;
+    }
+
+
+  }
+
+  .big-title.fancy {
+
+    h3 span,
+    .fl-heading-text {
+      font-family: "EphSerif";
+      font-style: italic;
+    }
+  }
+
+  .medium-title {
+    h3 span {
+      font-family: "EphSlab";
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 32px;
+    }
+  }
+
+  .dual-subtitle {
+    h4 span {
+      font-weight: 700;
+
+      .top {
+        color: $dark_purple;
+        font-family: "EphGothic";
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      .bottom {
+        color: $williams_purple;
+        font-family: "EphGothic";
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .small-title {
+    h4 {
+      span {
+        font-family: EphSlab;
+        color: $magenta;
+        font-weight: 400;
+        text-decoration-color: $magenta;
+        font-size: 18px;
+      }
+
+      a {
+        font-family: EphSlab;
+        color: $magenta;
+        font-weight: 400;
+        text-decoration-color: $magenta;
+        font-size: 18px;
+      }
+    }
+
+    .fl-rich-text {
+      color: $dark_purple;
+    }
+  }
+
+  .stat {
+    font-family: EphGothic;
+    font-size: 15px;
+
+    div[class*="number"] {
+      font-family: EphOctic;
+      color: $williams_purple;
+      font-size: 50px;
+    }
+  }
+
+  .sidebar-desc {
+    .fl-rich-text p {
+      color: $dark_purple;
+      font-family: "EphGothic";
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 19px;
+
+    }
+
+    .date-time p {
+      font-weight: 400;
+      font-size: 18px;
+      font-family: "EphSlab";
+      color: $dark_purple;
+    }
+
+  }
+
+  @media only screen and (min-width: $desktop) {
+    .big-title {
+
+      h3 span,
+      .fl-heading-text {
+        font-size: 38px;
+        line-height: 45px;
+      }
+    }
+
+    .medium-title {
+
+      h3 span,
+      .fl-heading-text {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+
+    .big-title.fancy {
+
+      h3 span,
+      .fl-heading-text {
+        font-size: 40px;
+        line-height: 45px;
+      }
+    }
+  }
+}

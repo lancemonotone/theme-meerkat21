@@ -1,0 +1,51 @@
+<style>
+    {{ css }}
+</style>
+
+<div class="wrap">
+    <h2>{{ this_theme }} Subtheme Usage Information</h2>
+    <div class="tab-body">
+        <table class="widefat" id="cets_active_themes">
+            <thead>
+            <tr>
+                <th class="nocase">Used Subthemes</th>
+                <th class="num">Total Sites</th>
+                <th>Site Titles</th>
+            </tr>
+            </thead>
+            <tbody id="themes">
+            {% for subtheme, sites in used_subthemes %}
+                <tr>
+                    <td>{{ subtheme }}</td>
+                    <td class="num">{{ sites|length }}</td>
+                    <td>
+                        <a href="javascript:void(0)" onClick="jQuery('#bloglist_{{ loop.index }}').toggle(400);">Show/Hide Sites</a>
+                        <ul class="bloglist" id="bloglist_{{ loop.index }}">
+                            {% for site in sites %}
+                                <li>
+                                    <a href="http://{{ site.blogurl }}" target="new">{{ site.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <table class="widefat">
+            <thead>
+            <tr>
+                <th class="nocase">Unused Subthemes</th>
+            </tr>
+            </thead>
+            <tbody id="plugins">
+            {% for subtheme in unused_subthemes %}
+                <tr>
+                    <td>{{ subtheme }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

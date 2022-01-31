@@ -1,0 +1,46 @@
+.site-footer {
+    padding: $global_padding;
+    background-color: $williams_purple;
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    z-index: 0;
+
+    svg.wms-stacked {
+        width: 150px;
+    }
+
+    @include link_build($links_light, $marigold);
+
+    .footer-links {
+        margin-top: $global_padding;
+        padding: $global_padding 0;
+        border-top: 1px solid $white;
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    .site-footer .content-wrap {
+        padding: 95px ($global_padding * 2) 100px;
+
+        svg.wms-stacked {
+            width: 240px;
+        }
+    }
+}
+
+/*********************
+LARGE 1200
+*********************/
+@media only screen and (min-width: $large) {
+    .site-footer .content-wrap {
+
+        .wordmark {
+            position: relative;
+            left: -8px;
+        }
+    }
+}

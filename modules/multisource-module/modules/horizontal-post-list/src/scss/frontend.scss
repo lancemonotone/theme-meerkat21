@@ -1,0 +1,53 @@
+@import '../../../../../../lib/assets/scss/lib/_breakpoints.scss';
+@import '../../../../../../lib/assets/scss/lib/_typography.scss';
+@import '../../../../../../lib/assets/scss/lib/_variables.scss';
+
+.horizontal-post-list {
+    a {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        color: $home-gray;
+        text-decoration: none;
+
+        .slide-cat {
+            text-transform: uppercase;
+            font-size: 11px;
+            color: $home-gray;
+            letter-spacing: 3.02px;
+            display: block;
+            opacity: 1;
+            height: 35px;
+            font-weight: 500;
+
+            &:after {
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: $home-gray;
+                content: "";
+                margin-bottom: 10px;
+                transition: all 0.25s ease-in-out;
+            }
+        }
+
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    .horizontal-post-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 42px;
+
+        div[class^="featured"] {
+            padding-right: 0px;
+        }
+
+    }
+}

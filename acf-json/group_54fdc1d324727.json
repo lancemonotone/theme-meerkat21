@@ -1,0 +1,162 @@
+{
+  "key": "group_54fdc1d324727",
+  "title": "Page Options",
+  "fields": {
+    "page_custom_breadcrumb": {
+      "key": "field_5022a528d0b77123",
+      "label": "Custom Breadcrumb Text",
+      "name": "page_breadcrumb",
+      "type": "text",
+      "instructions": "If you wish the page breadcrumb to be different or shorter, enter that text here. If this field is left blank, the page title will be used in the breadcrumb.",
+      "required": "0",
+      "default_value": "",
+      "formatting": "html",
+      "order_no": "1"
+    },
+    "text_cols": {
+      "key": "field_4feccb8bc0514",
+      "label": "Number of text columns",
+      "name": "text_cols",
+      "type": "radio",
+      "instructions": "Splits content into newspaper-like columns.",
+      "required": "0",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3"
+      },
+      "default_value": "1",
+      "layout": "horizontal",
+      "order_no": "0"
+    },
+    "dek": {
+      "key": "field_575f0803a999b",
+      "label": "Stylized first paragraph (dek)",
+      "name": "dek",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "message": "",
+      "default_value": 0,
+      "order_no": "0.5"
+    },
+    "last_updated": {
+      "key": "field_4feccb8bc53xx",
+      "label": "Show last updated",
+      "name": "last_updated",
+      "type": "true_false",
+      "instructions": "Displays last updated information at the bottom of the page.",
+      "required": "0",
+      "message": "",
+      "order_no": "1"
+    },
+    "page_meta_desc": {
+      "key": "field_5022a528d0b77",
+      "label": "SEO Description",
+      "name": "page_meta_desc",
+      "type": "text",
+      "instructions": "A short blurb (160 chars or less) often shown in search engine results that helps users decide if your site is relevant to their search.",
+      "required": "0",
+      "default_value": "",
+      "formatting": "html",
+      "order_no": "2"
+    },
+    "private_page_content": {
+      "key": "field_5660a10c8fd75",
+      "label": "Custom Private Page Content",
+      "name": "private_page_content",
+      "type": "wysiwyg",
+      "instructions": "Do you need to hide this page temporarily? Place explanatory text in the field below, then set the <a href=\"http:\/\/wordpress.williams.edu\/page-privacy\/\" title=\"Privacy Settings documentation\">visibility<\/a> of the page to \"private.\" The page content will be hidden and your message will be displayed instead. <strong>Note<\/strong>: There is also a site-wide option. See <a href=\"http:\/\/wordpress.williams.edu\/page-options\/\" title=\"Page Options documentation\">documentation<\/a> for more information.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": "3"
+    },
+    "campus_only": {
+      "key": "field_4feccb8bc53ad",
+      "label": "Campus only",
+      "name": "campus_only",
+      "type": "true_false",
+      "instructions": "Display content only to people with an on-campus IP address.",
+      "required": "0",
+      "message": "",
+      "order_no": "3"
+    },
+    "hide_sidebar": {
+      "key": "field_4feccb8bbde05",
+      "label": "Hide sidebar",
+      "name": "hide_sidebar",
+      "type": "true_false",
+      "instructions": "",
+      "required": "0",
+      "message": "",
+      "order_no": "5"
+    },
+    "hide_print": {
+      "key": "field_4feccb8bc53yy",
+      "label": "Hide print button",
+      "name": "hide_print",
+      "type": "true_false",
+      "required": "0",
+      "message": "",
+      "order_no": "6"
+    },
+    "hide_title": {
+      "key": "field_4feccb8bc53zz",
+      "label": "Hide page title and breadcrumbs",
+      "name": "hide_title",
+      "type": "true_false",
+      "required": "0",
+      "message": "",
+      "order_no": "7"
+    },
+    "page_style": {
+      "key": "field_4feccb8bc53ww",
+      "label": "Add page style",
+      "name": "page_style",
+      "type": "select",
+      "instructions": "",
+      "required": "0",
+      "choices": {
+        "": "-- none --",
+        "intro": "Intro page (larger type, more spacing)",
+        "splash": "Splash page (large image w\/ caption)",
+        "wide": "Wide",
+        "mediawall": "Media wall"
+      },
+      "default_value": "",
+      "allow_null": "0",
+      "multiple": "0",
+      "order_no": "8"
+    }
+  },
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ],
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ]
+  ],
+  "menu_order": 100,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": ""
+}

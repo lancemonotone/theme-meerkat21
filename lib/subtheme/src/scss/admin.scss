@@ -1,0 +1,14 @@
+/* prevent jumping when expanded */
+.tab-body {
+  th, td {
+    width: 25%;
+  }
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 50%;
+  }
+}
+
+.bloglist {
+  display: none;
+}

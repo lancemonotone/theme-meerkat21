@@ -1,0 +1,64 @@
+
+<div id="filter-swap">
+
+       
+        <nav class="filters-bar">
+            {# @todo make this one button with a loop over values #}
+                <ul>
+                    <li>Majors:</li>
+                    <li><button class="filter curImage"  data-img="{{dir}}/modules/career-path/img/compilation.jpg" data-color="">All</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-music.jpg" data-color="132, 174, 208">Arts/Music</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-languages.jpg" data-color="98, 145, 188">Languages</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-literature.jpg" data-color="69, 116, 170">English/Literature</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-religion.jpg" data-color="241, 210, 170">Philosophy/Religion</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-culture_studies.jpg" data-color="232, 179, 122">Culture Studies</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-history.jpg" data-color="227, 150, 84">History</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-political_studies.jpg" data-color="211, 121, 57">Political Studies</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-economics.jpg" data-color="187, 94, 43">Economics</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-psychology.jpg" data-color="145, 71, 32">Psychology</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-geosciences.jpg" data-color="210, 227, 195">Geosciences</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-biology.jpg" data-color="179, 209, 159">Biology</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-chemistry.jpg" data-color="147, 187, 127">Chemistry</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-astronomy.jpg" data-color="113, 163, 102">Physics/Astronomy</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-computer_science.jpg" data-color="85, 129, 80">Computer Science</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/m-mathematics.jpg" data-color="62, 101, 54">Mathematics</button></li>
+                </ul> 
+        </nav>
+        
+        <nav class="filters-bar">
+                <ul>
+                    <li>Careers:</li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/compilation.jpg"data-color="150, 150, 150" >All</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-entertainment.jpg" data-color="150, 150, 150">Arts/Entertainment</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-communication.jpg" data-color="150, 150, 150">Writing/Communication</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-religious_services.jpg" data-color="150, 150, 150">Social/Religious Services</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-government.jpg" data-color="150, 150, 150">Government</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-law.jpg" data-color="150, 150, 150">Law</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-sales.jpg" data-color="150, 150, 150">Sales</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-consulting.jpg" data-color="150, 150, 150">Consulting</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-financial.jpg" data-color="150, 150, 150">Banking/Financial</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-management.jpg" data-color="150, 150, 150">Insurance/Management</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-k-12_education.jpg" data-color="150, 150, 150">K-12 Education</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-college_education.jpg" data-color="150, 150, 150">College Education</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-medicine.jpg" data-color="150, 150, 150">Health/Medicine</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-construction.jpg" data-color="150, 150, 150">Engineering/Construction</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-technology.jpg" data-color="150, 150, 150">Technology</button></li>
+                    <li><button class="filter"  data-img="{{dir}}/modules/career-path/img/i-other.jpg" data-color="150, 150, 150">Other</button></li>
+                </ul>
+        </nav>
+
+
+    <div class="bigpic">
+        {# <img alt="Compilation" src="{{dir}}/modules/career-path/img/compilation.jpg" > #}
+        {% set imgurl = dir ~ '/modules/career-path/img/compilation.jpg' %}
+           <picture>
+                   {# <source srcset="{{ imgurl|towebp }}" type="image/webp"> #}
+                    <source srcset="{{ imgurl|retina(1)  }} 1x,
+                        {{ imgurl|retina(2) }} 2x,
+                        {{ imgurl|retina(3) }} 3x,
+                        {{ imgurl|retina(4) }} 4x">
+                    <img src="{{ imgurl|tojpg }}" alt="Compilation"/>
+            </picture>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+{
+    "key": "group_5e7412a22f096",
+    "title": "Welcome Page Fields",
+    "fields": [
+        {
+            "key": "field_5e7412c488bed",
+            "label": "Subpage Header SVG",
+            "name": "subpage_header_svg",
+            "type": "wysiwyg",
+            "instructions": "Paste the header SVG for this page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "273"
+            },
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "super_admin"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635191936
+}

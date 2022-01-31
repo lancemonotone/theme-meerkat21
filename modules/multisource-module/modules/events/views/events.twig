@@ -1,0 +1,27 @@
+<div class="meerkat_events_widget">
+    <div class="widget-events">
+        {% for event in events %}
+            <div class="cf event{% if event.thumb_url %} event-with-image{% endif %}">
+                {% if in_sidebar and event.thumb_url %}
+                    <div class="event-image">
+                        <img class="event-photo" alt="" src="{{ event.thumb_url }}">
+                    </div>
+                {% elseif not in_sidebar and event.thumb_url_medium %}
+                    <div class="event-image medium-image">
+                        <img class="event-photo" alt="" src="{{ event.thumb_url_medium }}">
+                    </div>
+                {% endif %}
+                <div class="event-text">
+                    <div class="event-date">{{ event.StartDateTime|date("D j M") }}</div>
+                    <div class="event-title">
+                        <a href="{{ event.permalink }}">{{ event.post_title }}</a>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-time-location">{{ event.StartDateTime|date("g:i a") }} {{ event.venue ? 'at ' ~ event.venue }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a class="wms-cal-link alignright" href="http://events.williams.edu">Williams Calendar &raquo;</a>
+</div>

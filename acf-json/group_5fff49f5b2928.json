@@ -1,0 +1,67 @@
+{
+    "key": "group_5fff49f5b2928",
+    "title": "Oakley Events",
+    "fields": [
+        {
+            "key": "field_601acd56f4463",
+            "label": "When",
+            "name": "when",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y @ g:i a",
+            "return_format": "F j, Y @ g:i a",
+            "first_day": 1
+        },
+        {
+            "key": "field_601acdd370f78",
+            "label": "Where",
+            "name": "where",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "189"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635191936
+}

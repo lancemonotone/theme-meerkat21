@@ -1,0 +1,20 @@
+
+
+	<section class="cd-intro">
+		<h1 class="cd-headline {{settings.animation_type}}">
+			<span class="cd-header">{{settings.header_text}}</span>
+			<span class="cd-words-wrapper">
+			    {% for quote in quotes %}
+				{% set qclass = loop.first ? ' class="is-visible"' : '' %}
+				<b{{ qclass }}>{{ quote }}  
+					{% if not settings.CTA_link is empty %}
+						<br/> 
+						<a href="{{settings.CTA_link}}" class="ah-link {{settings.CTA_link_class}}" style="color:#{{ settings.link_color }};">{{settings.CTA_text}}</a>
+					{% endif %}
+				</b>
+			    {% endfor %}
+			</span>
+		</h1>
+	
+	</section> <!-- cd-intro -->
+	

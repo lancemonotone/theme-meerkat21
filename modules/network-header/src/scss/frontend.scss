@@ -1,0 +1,97 @@
+@import "import";
+//x-height and ascender adjustment from Order mockup...subject to change
+$wordmark_xheight_910up: 33px;
+//shift everything to adjust to the top of the w instead of the ascenders on the l
+$wordmark_asc_adjustment_910up: 4px;
+
+
+.fl-module-network-header {
+  color: $white;
+  font-family: $eph_slab;
+  font-size: $base_font_size + 2;
+
+  .content-wrap {
+    padding: $global_padding;
+    display: grid;
+    grid-template-columns: 120px auto 30px 30px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "wordmark . search-btn menu-btn"
+      "navbox navbox navbox navbox"
+    ;
+    grid-column-gap: $column_gap;
+
+  }
+
+  .wordmark {
+    grid-area: wordmark;
+  }
+
+  .search-btn {
+    grid-area: search-btn;
+
+    //add spinnning icon when search button is clicked but endpoint isn't finished loading yet
+    &.loading.clicked {
+      &:after {
+        @extend %spinner_icon;
+        position: absolute;
+        margin-left: 2px;
+      }
+    }
+
+  }
+
+  .menu-btn {
+    grid-area: menu-btn;
+  }
+
+  @include button_build(0, transparent, $white, transparent, $marigold);
+}
+
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+  .fl-module-network-header {
+
+    .content-wrap {
+      //the current padding is 40 due to bb settings x 2 wrappers, the x-height = 33px thus -7px + -4px for ascender readjustment...until redesign
+      top: -11px;
+      position: relative;
+      //to calculate the bottom padding it is x-height x 2 - the top re-adjustment - 40 for the bb standard x 2 wrappers
+      padding: 0 $global_padding 15px $global_padding;
+      grid-template-columns: 264px auto 76px 57px;
+      column-gap: $wordmark_xheight_910up;
+      grid-template-areas:
+        "wordmark . search-btn menu-btn"
+        ". navbox navbox ."
+      ;
+
+      .wms-search {
+        justify-self: end;
+      }
+
+    }
+
+  }
+
+}
+
+
+/*********************
+LARGE 1200
+*********************/
+@media only screen and (min-width: $large) {
+  .fl-module-network-header {
+    .content-wrap {
+
+      //shift to the bottom of the w
+      .wordmark {
+        position: relative;
+        left: -8px;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,70 @@
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+    @if $xy==xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        @include transform(translateX(-50%) translateY(-50%));
+    }
+
+    @else if $xy==x {
+        left: 50%;
+        right: auto;
+        @include transform(translateX(-50%));
+    }
+
+    @else if $xy==y {
+        top: 50%;
+        bottom: auto;
+        @include transform(translateY(-50%));
+    }
+}
+
+@mixin perspective($property) {
+    -webkit-perspective: $property;
+    -moz-perspective: $property;
+    perspective: $property;
+}
+
+@mixin transform-origin($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin animation($anim) {
+    -webkit-animation: $anim;
+    -moz-animation: $anim;
+    animation: $anim;
+}
+
+@mixin backface-visibility($bf) {
+    -webkit-backface-visibility: $bf;
+    backface-visibility: $bf;
+}
+
+@mixin transform-style($ts) {
+    -webkit-transform-style: $ts;
+    -moz-transform-style: $ts;
+    -ms-transform-style: $ts;
+    -o-transform-style: $ts;
+    transform-style: $ts;
+}
+
+@mixin transition($trans) {
+    -webkit-transition: $trans;
+    -moz-transition: $trans;
+    transition: $trans;
+}

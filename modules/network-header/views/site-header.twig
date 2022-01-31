@@ -1,0 +1,34 @@
+ <a class="skip-link screen-reader-text" href="#content">{{ __('Skip to main content', 'twentysixteen' ) }}</a>
+    <div class="content-wrap">
+        <div class="wordmark">
+            <a class="logo" href="{{ constant('WWW_BLOG_URL') }}" title="{{ __('Go to') }} Williams College Home" aria-flowto="search-3">
+                {% include 'modules/svg.twig' with {
+                    'title':'Williams College',
+                    'img_dir':constant('THEME_IMG_URL'),
+                    'url':'/wordmark_wms_only.svg'
+                } %}
+            </a>
+        </div>
+        <div id="wms-search-btn" class="search-btn loading">
+
+            {% include 'widgets/button_toggle.twig' with {
+                'title'         : __('Search'),
+                'icon_class'    :'bt-search',
+                'has_popup' : true,
+            } %}
+        </div>
+        <div id="wms-navbox-wrap" class="wms-search">
+            {{ navbox_widget }}
+        </div>
+        <div class="menu-btn">
+            {% include 'widgets/button_toggle.twig' with {
+                'target'        : '#megaoverlay',
+                'title'         : __('Menu'),
+                'btn_id'        : 'menu-toggle-trigger',
+                'featherlight'  : '#megaoverlay',
+                'has_popup' : true,
+            } %}
+        </div>
+
+    </div>
+    {% include 'modules/mega_menu.twig' %}

@@ -1,0 +1,18 @@
+<div class="fl-post-carousel fl-post-carousel-{{ template }}">
+    {# Render the navigation #}
+    {% if 'yes' == settings.navigation %}
+        {% include 'navigation.twig' %}
+    {% endif %}
+    <div class="fl-post-carousel-wrapper">
+        {# https://twig.symfony.com/doc/2.x/filters/batch.html #}
+        {% for column in groups|batch(3) %}
+            <div class="fl-post-carousel-post groups-slide">
+                {% for row in column %}
+                    <div class="{{ row.class }}">{{ row.name }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="fl-clear"></div>

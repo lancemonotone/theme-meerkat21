@@ -1,0 +1,61 @@
+{% if args.hide_widget_title == 'n' %}
+    <h2 class="widgettitle">{{ args.title ? args.title : season ~ ' Season' }}</h2>
+{% endif %}
+{% if args.hide_season_header == 'n' %}
+    {# only show jump links and season picker if this is a season page (i.e., not a widget #}
+    {% include 'modules/season-header.twig' %}
+{% endif %}
+<div class="season-event-list">
+    <div id="{{ args.id }}-{{ args.hash }}" class="season-event-list-inner">
+        {% for group in groups %}
+            <div id="{{ group.args.class }}" class='season-event-cat cat-{{ group.args.class }}'>
+                {% if group.args.title and group.args.headers %}
+                    <h3 class='bar widgettitle'>{{ group.args.title }}</h3>
+                {% endif %}
+
+                <ul>
+                    {% for event in group.events %}
+
+                        {# debugging #}
+                        {# {{ fn('var_dump', event) }} #}
+
+                        <li class="season-event-item">
+                            {% if group.args.expanded and event.before %}
+                                <div class="before-title">{{ event.before }}</div>
+                            {% endif %}
+
+                            <h4>
+                                <a href="{{ event.title_url }}">
+                                    {% if args.display_images == 'y' and event.img %}
+                                        {{ event.img }}
+                                    {% endif %}
+                                    {{ event.title }}
+                                </a>
+                            </h4>
+
+                            {% if group.args.expanded and event.after %}
+                                <div class="after-title">{{ event.after }}</div>
+                            {% endif %}
+
+                            <!-- before details -->
+                            {% if group.args.details %}
+                                {% for detail in event.details %}
+                                    {% include 'modules/details.twig' with {'detail': detail} %}
+                                {% endfor %}
+                            {% endif %}
+                            <!-- after details -->
+
+                            {# '62 Center 'integrated' events #}
+                            {% include 'modules/ctd_integrated.twig' %}
+
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+
+        {% else %}
+            <h4>No events are listed.</h4>
+        {% endfor %}
+    </div>
+</div>

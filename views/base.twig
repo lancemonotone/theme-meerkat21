@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }} class="no-js">
+<head>
+    <meta charset="{{ site.charset }}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+    {{ fn('wp_head') }}
+    {% block header %}{% endblock %}
+</head>
+
+    <body class="{{ body_class }} twig-{{ page }}">
+        <noscript>
+        <!-- Google Tag Manager (noscript) -->
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWHWG4B"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <!-- End Google Tag Manager (noscript) -->
+        </noscript>
+
+        <div class="page-wrap">
+            {% include 'modules/site_header.twig' %}
+
+            <div class="site-content">
+                <div class="wms-cols  {{ fullwidth ? '' : 'content-wrap' }} ">
+                    {# left/top sidebar #}
+                    {% if not hide_site_nav %}
+                        {% include 'modules/sidebar_sitenav.twig' %}
+                    {% endif %}
+                    <main id="content" class="w-2/3">
+                        {# start the loop #}
+                        {% block content %}{% endblock %}
+                    </main>
+
+                    {# right/bottom sidebar #}
+                    {% if not hide_sidebar %}
+                        {% include 'modules/sidebar_aside.twig' %}
+                    {% endif %}
+                </div>
+            </div>
+
+            {% include 'modules/site_footer.twig' %}
+        </div>
+
+        {{ wp_footer }}
+
+    </body>
+</html>

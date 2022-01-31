@@ -1,0 +1,84 @@
+{
+    "key": "group_611173e2e0619",
+    "title": "Story Author",
+    "fields": [
+        {
+            "key": "field_611173eb29546",
+            "label": "Author or Authors",
+            "name": "story_author",
+            "type": "text",
+            "instructions": "The person or people who get credit for writing the story. In most cases you'll want to start with \"By ...\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "in_the_news"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "magazine"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "stories"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635191936
+}

@@ -1,0 +1,38 @@
+<div class="sidebar" role="complementary">
+    <nav role="navigation" aria-label="{{ site.title }}">
+
+        {% if site_nav.count %}
+            {% include 'modules/navigation.twig' with {'nav_obj': navigation.site, 'menu_name': site.name, 'menu_class': 'site-navigation', 'toggle': true} %}
+        {% endif %}
+
+        {% do action('bb_sidebar_site_nav') %}
+    </nav>
+    {% if network_sidebar_message %}
+
+        {% set sidebar_message = {
+            'id' : 'network-sidebar-message',
+            'class' : 'sidebar widget-area',
+            'widgets' : network_sidebar_message
+        } %}
+        {% include 'modules/widget-area.twig' with {'widgets' : sidebar_message} %}
+
+    {% endif %}
+
+    {% if sidebar_widgets_extra %}
+
+        {% include 'modules/widget-area.twig' with {'widgets' : sidebar_widgets_extra} %}
+
+    {% endif %}
+
+    {% if sidebar_widgets %}
+
+        {% include 'modules/widget-area.twig' with {'widgets' : sidebar_widgets} %}
+
+    {% endif %}
+
+    <aside>
+        {% do action('bb_sidebar_aside') %}
+    </aside>
+
+
+</div>

@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html {{ site.language_attributes }} class="no-js">
+<head>
+    <meta charset="{{ site.charset }}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+    {{ theme.get_favicon() }}
+    {{ fn('wp_head') }}
+    {% block header %}{% endblock %}
+</head>
+
+<<<<<<< HEAD
+{% do action('meerkat_body_begin') %}
+
+    <body class="{{ body_class }} twig-{{ page }}">
+        
+        <noscript>
+        <!-- Google Tag Manager (noscript) -->
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWHWG4B"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        <!-- End Google Tag Manager (noscript) -->
+        </noscript>
+=======
+<body class="{{ body_class }} twig-{{ page }}  {{ hide_sidebar ? 'full-width' }}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWHWG4B"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% include 'modules/svg-lib.twig' %}
+
+<div id="page" class="site">
+
+    <div id="page-inner"> {# necessary for sticky-footer mixin #}
+
+        {# handled by class.bb  #}
+        <header class="site-header" role="banner">
+            {% do action('bb_alert') %}
+            {% do action('bb_site_header') %}
+        </header>
+        <div id="content" class="site-content outer-container">
+
+            <div id="content-inner" class="content-inner inner-container">
+
+                <main id="main"
+                        class="content-main
+                        {{ hide_sidebar ? 'hide_sidebar' : 'has_sidebar' }}
+                        {{ post.get_field('text_cols') ? 'textcols-' ~ post.get_field('text_cols') }}"
+                        role="main">
+
+                    {# start the loop #}
+                    {% block content %}{% endblock %}
+
+                </main><!-- .content-main -->
+
+                {% if not hide_sidebar %}
+
+                    {% include 'modules/sidebar.twig' %}
+                    {% include 'modules/bb_sidebar.twig' %}
+
+                {% endif %}
+>>>>>>> m21
+
+        <div class="page">
+            {% include 'modules/site_header.twig' %}
+
+            <div class="site-content">
+                <div class="wms-cols content-wrap">
+                    {# left/top sidebar #}
+                    {% include 'temp/navigation.twig' %}
+
+                    <main id="content" class="w-3/5">
+                        {# start the loop #}
+                        {% block content %}{% endblock %}
+                    </main>
+
+                    {# right/bottom sidebar #}
+                    {% include 'temp/aside.twig' %}
+                </div>
+            </div>
+
+            {% include 'modules/site_footer.twig' %}
+        </div>
+
+        {{ wp_footer }}
+
+    </body>
+</html>

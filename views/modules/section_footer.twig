@@ -1,0 +1,61 @@
+{% if not options.hide_site_footer %}
+    <div id="section-footer" class="section-footer">
+         <div class="content-wrap wms-cols">
+            <div>
+                <a class="site-title" href="{{ site.url }}" rel="home" title="{{ __('Go to') }} {{ site.name }}">{{ site.name }}</a>
+
+                    <address>
+                        {% if  contact_info.address_1 %}
+                            <span>{{ contact_info.address_1 }}</span>
+                            <br/>
+                        {% endif %}
+                        {% if  contact_info.address_2 %}
+                            <span>{{ contact_info.address_2 }}</span>
+                            <br/>
+                        {% endif %}
+                        {% if  contact_info.city or contact_info.state or contact_info.zipcode %}
+                            <span>{% if  contact_info.city %}{{ contact_info.city }},{% endif %} {{ contact_info.state }} {{ contact_info.zipcode }}</span>
+                            <span>USA</span>
+                            <br/>
+                        {% endif %}
+                    </address>
+            </div>
+            <div>
+                {% if  contact_info.phone %}
+                    <span><i class="btl bt-phone"></i> <a href="tel:{{ contact_info.phone }}"><span class="screen-reader-text">{{ site.name }} Phone Number </span>{{ contact_info.phone }}</a></span>
+                    <br/>
+                {% endif %}
+                {% if  contact_info.fax %}
+                    <span><i class="btl bt-fax"></i>{{ contact_info.fax }}</span>
+                    <br/>
+                {% endif %}
+                {% if  contact_info.contact_email %}
+                    <span><i class="btl bt-envelope"></i><a href="mailto:{{ contact_info.contact_email }}">{{ contact_info.contact_email }}</a></span>
+                    <br/>
+                {% endif %}
+                {% if  contact_info.contact_notes %}
+                    <span>{{ contact_info.contact_notes }}</span>
+                {% endif %}
+            </div>
+            <div>
+                {{ footer_nav or social_nav ? '<div class="footer-menus">' }}
+                {% if footer_nav %}
+                    <div class="footer-menu text-menu">
+
+                        {% include 'modules/navigation.twig' with {'nav_obj' : navigation.footer, 'menu_class' : 'footer-text-navigation'} %}
+
+                    </div>
+                {% endif %}
+                {% if social_nav %}
+                    <div class="footer-menu social-menu">
+
+                        {% include 'modules/navigation.twig' with {'is_social' : 1, 'nav_obj' : navigation.social, 'menu_class' : 'social-navigation-footer'} %}
+
+                    </div>
+                {% endif %}
+                {{ footer_nav or social_nav ? '</div>' }}
+
+            </div>
+        </div>
+    </div>
+{% endif %}

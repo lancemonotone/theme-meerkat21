@@ -1,0 +1,33 @@
+.stat-spacer {
+  height: 1em;
+}
+.stat-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: .5em;
+  margin-bottom: .5em;
+}
+.stat-wrapper div {
+  background-color: #542f7c;
+  color: white;
+  font-size: 1.6em;
+}
+.stat-wrapper .stat {
+  padding: .5em .2em;
+  text-align: center;
+}
+.stat-wrapper .label {
+  padding: .5em .2em .5em .5em;
+}
+@media only screen and (max-width: 600px) {
+  .stat-spacer {
+    height: .7em;
+  }
+  .stat-wrapper div {
+    font-size: 1.2em;
+  }
+  .stat-wrapper {
+    grid-template-columns: 1fr 2fr;
+    grid-gap: .3em;
+  }
+}

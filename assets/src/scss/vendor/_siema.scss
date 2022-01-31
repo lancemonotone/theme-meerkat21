@@ -1,0 +1,10 @@
+.siema-nav-wrapper.siema-nav-wrapper button:focus,
+.fl-post-carousel .fl-post-carousel-navigation a:focus {
+  outline-color: #a8d49b;
+  outline: auto 5px -webkit-focus-ring-color;
+}
+.siema-nav-wrapper.siema-nav-wrapper:-moz-focusring,
+.fl-post-carousel .fl-post-carousel-navigation a:-moz-focusring {
+  outline-color: #a8d49b;
+  outline: auto 5px -webkit-focus-ring-color;
+}

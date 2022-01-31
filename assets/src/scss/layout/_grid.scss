@@ -1,0 +1,71 @@
+/*********************
+Component: Columns
+* 
+* use .wms-cols to produce auto-growing row of equal sized columns
+* add width class to the column itself to alter the sizes (_width.scss)
+* use .wms-cols-{n} to fix the number of columns in your grid container
+*
+*********************/
+
+// container
+.wms-cols {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    //columns
+    & > * {
+      display: block;
+      flex-basis: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: #{$column_gap/2} 0;
+      width: auto;
+      //fence post
+      &:first-of-type{
+        padding-top: $column_gap;
+      }
+      &:last-of-type{
+        padding-bottom: $column_gap;
+      }
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+  .wms-cols {
+    flex-direction: row;
+    & > * {
+      padding: $column_gap #{$column_gap/2};
+      &:first-of-type{
+        padding-left: 0;
+      }
+      &:last-of-type{
+        padding-right: 0;
+      }
+    }
+  }
+ 
+  //fixed columns 1-12 .wms-cols-{n}
+  @for $i from 1 through 12 {
+    .wms-cols-#{$i}{	
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      display: grid;
+      grid-gap: $column_gap; //old browsers
+      gap: $column_gap;
+      padding: $column_gap 0;
+    };
+  }
+  [class*="wms-cols-"] > *{
+    padding: 0;
+    margin: 0;
+  }
+  [class*="wms-cols-"] > *:first-of-type, [class^="wms-cols-"] > *:last-of-type{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+}

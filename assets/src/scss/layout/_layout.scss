@@ -1,0 +1,31 @@
+@import "grid";
+@import "width";
+@import "card";
+
+.cf {
+    display: flow-root;
+}
+
+.content-wrap {
+    max-width: $large;
+    margin: 0 auto;
+    padding: $global_padding;
+}
+
+//sticky items
+.sticky-item {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+
+
+/*********************
+LARGE 1200
+*********************/
+@media only screen and (min-width: $large) {
+    .content-wrap {
+        padding: 0;
+    }
+}

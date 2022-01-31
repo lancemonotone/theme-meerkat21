@@ -1,0 +1,17 @@
+.section-footer {
+    padding: $global_padding;
+    background-color: $dark_purple;
+    @include link_build($links_light, $marigold);
+    color: $white;
+    position: relative;
+    z-index: 1;
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    .section-footer .content-wrap {
+        padding: 95px ($global_padding * 2) 100px;
+    }
+}

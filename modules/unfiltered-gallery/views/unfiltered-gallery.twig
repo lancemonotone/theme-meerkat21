@@ -1,0 +1,21 @@
+<span class="ug-location">edit unfiltered gallery here
+
+        
+    <div class="ug" data-moduletype="ugallery"  data-featherlight-gallery
+        data-featherlight-filter="a" >
+
+        {% for ugid in ug_photo_ids %}
+            {%set curimg = Image(ugid) %}
+            {%set imgurl = curimg.src %}
+
+        
+
+            <a class="thumbnail" href="{{ imgurl|tojpg }}">
+                <img src="{{ imgurl|tojpg|resize(50) }}" alt="{{ curimg.alt ?: curimg.caption }}" width="50">
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+</span>

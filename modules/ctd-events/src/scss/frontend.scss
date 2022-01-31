@@ -1,0 +1,33 @@
+.season-event-list {
+  position: relative;
+  button.refresh-transient.btn.edit-me {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+  .season-event-cat {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+      margin-top: 0;
+    }
+    .season-event-item {
+      /*h4 {
+        margin-top: 1em;
+      }*/
+      .event-meta {
+        font-size: .8em;
+      }
+      a {
+        text-decoration: none;
+        span.sep {
+          padding: 0 8px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

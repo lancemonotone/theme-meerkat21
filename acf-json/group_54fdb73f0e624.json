@@ -1,0 +1,149 @@
+{
+  "key": "group_54fdb73f0e624",
+  "title": "Site Options",
+  "fields": [
+    {
+      "key": "field_5d701341d4985",
+      "label": "Parent Site",
+      "name": "parent_site",
+      "type": "select",
+      "instructions": "Setting a parent site will insert a link to the parent site into the breadcrumb directly before the link to this site's homepage.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": [],
+      "default_value": {
+        "": ""
+      },
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "array",
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_5022a3c886d5e",
+      "label": "SEO description (homepage)",
+      "name": "site_meta_desc",
+      "prefix": "",
+      "type": "text",
+      "instructions": "A short blurb (160 char or less) shown in search engine results that helps users decide if your site is relevant to their search.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_5spwn2w02vd7y",
+      "label": "Custom Private Page Content",
+      "name": "private_page_content",
+      "type": "wysiwyg",
+      "instructions": "Do you need to provide a generic message for private pages on this site? Place explanatory text in the field below (there is also a per-page option which will override this message), then set the <a href=\"http:\/\/wordpress.williams.edu\/page-privacy\/\" title=\"Privacy Settings Documentation\">visibility<\/a> of the pages in question to \"Private.\" The page content will be hidden and your message will be displayed instead. See <a href=\"http:\/\/wordpress.williams.edu\/page-options\/\" title=\"Page Options Documentation\">documentation<\/a> for more information.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0
+    },
+    {
+      "key": "field_58486a9f58c44",
+      "label": "Helpful Login Page Links",
+      "name": "additional_login_links",
+      "type": "repeater",
+      "instructions": "Add one or more links which will appear underneath the form on the Wordpress login page. ",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "collapsed": "",
+      "min": "",
+      "max": "",
+      "layout": "table",
+      "button_label": "Add Link",
+      "sub_fields": [
+        {
+          "key": "field_58486b4d58c45",
+          "label": "Link Title",
+          "name": "additional_login_link_title",
+          "type": "text",
+          "instructions": "Enter the link text.",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "Enter title",
+          "prepend": "",
+          "append": "",
+          "maxlength": "",
+          "readonly": 0,
+          "disabled": 0
+        },
+        {
+          "key": "field_58486b8f58c46",
+          "label": "Link URL",
+          "name": "additional_login_link_url",
+          "type": "url",
+          "instructions": "Enter complete link address, including <strong>http:\/\/<\/strong>. ",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "acf-options"
+      }
+    ]
+  ],
+  "menu_order": 2,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "custom_fields",
+    "discussion",
+    "comments",
+    "slug",
+    "author"
+  ]
+}

@@ -1,0 +1,2 @@
+{% set file_to_get = img_dir ~ url  %}
+{{ fn("wp_remote_get", file_to_get).body }}

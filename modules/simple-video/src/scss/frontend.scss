@@ -1,0 +1,188 @@
+@import "import";
+/*********************
+BASE
+*********************/
+
+ 
+#simplevideos-wrapper{
+    cursor: move; /* fallback: no `url()` support or images disabled */
+    cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
+    cursor:    -moz-grab; /* Firefox 1.5-26 */
+    cursor:         grab; /* W3C standards syntax, should come least */
+    max-width: 500px;
+    overflow: hidden;
+    .post-ms-header{
+        position: absolute;
+        top: 18px;
+    }
+}
+#simplevideos{
+  
+    position: relative;
+}
+.simple-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+}
+.simple-video {
+    picture {
+        height: 125px;
+        transform: scale(0.7);
+        border-radius: 11px;
+        background-color: #efefef;
+        overflow: hidden;
+        position: relative;
+        display:flex;
+        justify-content: center;
+        transition: 250ms linear transform;
+        .playbtn{
+            display: none;
+        }
+    }
+    &.expand picture{
+        transform: scale(1);
+        .playbtn{
+            display: block;
+            color: #fff;
+            @include bullseye(absolute);
+            i{
+                opacity: .7;
+            }
+            &:hover i{
+                opacity: 1;
+            }
+        }
+    }
+}
+.simple-video picture {
+    img{
+        object-position: 50% 50%;
+        object-fit: cover;
+    }
+    a.title {
+        position: absolute;
+        bottom: 5rem;
+        left: 2rem;
+        margin-right: 2rem;
+      span{
+        display: inline;
+        font-family: IBM Plex Mono, monospace;
+        background-color: #fff;
+        color: #000;
+        font-weight: 400;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        font-size: 14px;
+        padding: 3px 5px;
+        text-decoration: underline;
+        text-decoration-skip: ink;
+        text-decoration-skip-ink: auto;
+      }
+    }
+}
+
+.siema-nav-wrapper.simplevideos{
+   display: flex;
+   justify-content: flex-end;
+   margin: 0px auto 20px;
+   max-width: 1200px;
+   .siema-nav {
+       position: relative;
+       z-index: 1;
+       display: flex;
+       white-space: nowrap;
+       width: 70px;
+        // &::after {
+        //            content: '';
+        //            position: absolute;
+        //            top: 20%;
+        //            left: 50%;
+        //            width: 1px;
+        //            height: 60%;
+        //            opacity: 0.7;
+        //            background: #000;
+        //            transform: rotate(22.5deg);
+        //        }
+       button {
+           border: 0;
+           background: none;
+           margin: 0 5px 0 0;
+           padding: 0;
+           font-family: inherit;
+           cursor: pointer;
+           -webkit-appearance: none;
+           position: relative;
+           z-index: 1000;
+           display: flex;
+           white-space: nowrap;
+           height: 35px;
+           width: 35px;
+           .icon{
+               height: 24px;
+           }
+           .next.icon{
+               -webkit-transform: rotate(180deg);
+               -moz-transform: rotate(180deg);
+               -ms-transform: rotate(180deg);
+               -o-transform: rotate(180deg);
+               transform: rotate(180deg)
+              
+           }
+       }
+       button:focus {
+           outline: none;
+       }
+   }
+}
+
+
+// /*********************
+// TABLET 910
+// *********************/
+// @media only screen and (min-width: $tablet) {
+
+//     #simplevideos{
+//         width: 120vw;
+//         left: -10vw;
+//         position: relative;
+//     }
+//     .simple-video{
+//         picture a.title { 
+//             display: none; 
+//         }
+//         &:hover{
+//             picture {
+//                 a.title { 
+//                     display: inline;
+//                  }
+//                  &::before {
+//                     opacity: 1;
+//                     position: absolute;
+//                     content: "";
+//                     top: 0;
+//                     right: 0;
+//                     bottom: 0;
+//                     left: 0;
+//                     background-image: linear-gradient(
+//                     to bottom,
+//                     rgba(0,0,0,0),
+//                     rgba(0,0,0,1)
+//                     );
+//                     transition: opacity 0.5s linear;
+             
+//                 }     
+//             }
+//         }
+        
+//     }
+// }
+
+// /*********************
+// LARGE 1200
+// *********************/
+// @media only screen and (min-width: $large) {
+
+
+// }

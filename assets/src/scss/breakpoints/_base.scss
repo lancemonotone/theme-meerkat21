@@ -1,0 +1,85 @@
+body {
+  font-family: $sans_serif;
+  font-size: $base_font_size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*********************
+LINK STYLES
+*********************/
+
+@include link_build($links_dark, $dark_purple);
+
+//do not underline these links
+a {
+
+  &[data-featherlight-gallery],
+  &.btn,
+  &.button,
+  &[rel~="attachment"] {
+    @include NO_link_underline;
+  }
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  text-rendering: optimizelegibility;
+  font-family: $serif;
+}
+
+h1,
+.h1 {}
+
+h2,
+.h2 {}
+
+h3,
+.h3 {}
+
+h4,
+.h4 {}
+
+h5,
+.h5 {}
+
+
+
+.page-wrap {
+  //fallback for when content is too short
+  display: grid;
+  // header search site-content footer
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.site-content {
+  //move the content area up in z-index for the fixed stacked footer
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+}
+
+//default wordmark behavior
+.wordmark {
+  &:hover {
+
+    path,
+    polygon {
+      fill: $marigold;
+    }
+  }
+}

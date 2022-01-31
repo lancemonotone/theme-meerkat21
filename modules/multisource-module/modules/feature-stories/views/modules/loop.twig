@@ -1,0 +1,10 @@
+<div class="fl-post-carousel-post fl-post-carousel-post-{{ template }}">
+    <div class="fl-post-carousel-text-wrap">
+        <a class="image-link" href="{{ post.gridobj.link }}">
+            <span class="slide-cat">{{ post.gridobj.new_category_title }}</span>
+            <figure><img alt="{{ post.gridobj.alt_text }}" src="{{ post.gridobj.img_src.featured|resize(300) }}"></figure>
+            <div class="slide-blurb">{{post.gridobj.grid_blurb}}</div>
+        </a>
+    </div>
+    {#{{ fn('var_dump', post) }}#}
+</div>

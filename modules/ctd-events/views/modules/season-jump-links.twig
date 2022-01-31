@@ -1,0 +1,7 @@
+{% set link_list = [] %}
+{% for link in jump_links %}
+    {% set link_list = link_list|merge(['<a aria-label="Jump to ' ~ link.title  ~ '" href="#' ~ link.class ~ '">' ~ link.title ~ '</a>']) %}
+{% endfor %}
+
+
+<div class="jump-links" style="margin:1em 0;font-size:.93em">{{ link_list | join(' | ') }}</div>

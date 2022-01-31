@@ -1,0 +1,319 @@
+/*
+Subtheme Name: brochure
+Template: m20
+*/
+body.m21.subtheme-brochure {
+  $marigold: #E6AD28;
+  $lichen: #5C9396;
+  $darkpurple: #3C2151;
+
+  @import "partials/brochure_variables";
+  @import "partials/breadcrumb_bar";
+
+  header {
+    background-color: #fff;
+  }
+
+  /*
+   * Don't double up padding at bottom of rows with text
+   */
+  .fl-rich-text p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  %unfilteredlight {
+    font-family: $monospace;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  %unfiltereddark {
+    font-family: $monospace;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  %cta_link {
+    border: 0;
+    border-radius: 0.25rem;
+    background: none;
+    font-family: $monospace;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 0;
+    line-height: normal;
+    vertical-align: text-top;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+  /*********************
+  BASE
+  *********************/
+
+  font-family: $sans_plex;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+
+  .post-content p,
+  .post-excerpt p {
+    font-family: $sans_plex;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .post-content ul li,
+  .post-content ol li {
+    font-family: $sans_plex;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  a {
+    // color: #5c9396;
+    // font-style: normal;
+  }
+
+  .unfilteredlight {
+    h2 {
+      font-family: $monospace;
+      display: inline;
+      text-transform: uppercase;
+      line-height: 32px;
+
+      span,
+      a {
+        @extend %unfilteredlight;
+      }
+    }
+  }
+
+  .unfiltereddark {
+    h2 {
+      font-family: $monospace;
+      display: inline;
+      text-transform: uppercase;
+      line-height: 32px;
+
+      span,
+      a {
+        @extend %unfiltereddark;
+      }
+    }
+  }
+
+  .unfiltered-lg h2 {
+    font-family: $monospace;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 37px;
+  }
+
+  .unfiltered-subhead h3 {
+    font-family: $monospace;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  .checklist {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8px;
+
+  }
+
+  .checklist > li:before {
+    content: "";
+    font-family: "Black Tie";
+    font-size: 0.8em;
+    padding-right: 8px;
+  }
+
+  .checklist ol {
+    margin-top: 0;
+  }
+
+  .checklist .note {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .textshadowdark {
+    text-shadow: 0 0 4px #000;
+  }
+
+  .textshadowlight {
+    text-shadow: 0 0 4px #fff;
+  }
+
+  .fl-callout-text-wrap {
+    margin-top: 16px;
+  }
+
+  .post-content {
+    blockquote {
+      padding: 0 20px;
+
+      p {
+        font-family: $monospace;
+        font-style: normal;
+        background-color: transparent;
+        padding: 0;
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      footer {
+        padding: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+
+        cite {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          margin-left: 10px;
+
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+
+  }
+
+  footer {
+    font-weight: 400;
+
+    .section-footer {
+      font-weight: 400;
+    }
+
+    .site-footer {
+
+      a,
+      .widget-area .widget.address-container .widget-insides address span {
+        font-weight: 400;
+      }
+    }
+
+  }
+
+  //overlay info button hover state
+  i.fixwidth {
+    &:hover {
+      color: #497476;
+    }
+  }
+
+
+  /*********************
+  MOBILE 320
+  *********************/
+  @media only screen and (min-width: $mobile_zoom) {
+  }
+
+  /*********************
+  MOBILE 710
+  *********************/
+  @media only screen and (min-width: $mobile_portrait) {
+  }
+
+  /*********************
+  MOBILE LANDSCAPE 783
+  *********************/
+  @media only screen and (min-width: $mobile_landscape) {
+  }
+
+  /*********************
+  TABLET 910
+  *********************/
+  @media only screen and (min-width: $tablet) {
+
+    //fix width in informational featherlights
+    .fixwidth {
+      .featherlight-content {
+        max-width: 50vw;
+        height: auto;
+        padding: 40px;
+
+        .featherlight-close-icon {
+          top: 10px;
+          right: 10px;
+          position: absolute;
+        }
+      }
+    }
+
+    //button bars
+    .btn_bar_fa {
+      .fl-col-content {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .fl-module-content {
+        height: 100%;
+      }
+
+      .fl-button-wrap {
+        height: 100%;
+        max-width: 240px;
+
+        .fl-button {
+          height: 100%;
+          align-content: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  /*********************
+  DESKTOP 985
+  *********************/
+  @media only screen and (min-width: $desktop) {
+    .shiftedbox {
+      z-index: 100;
+      position: relative;
+      left: 0;
+      width: 50vw;
+      max-width: 100vw;
+      background-color: #fff;
+      padding: 40px 20px 80px 0;
+    }
+  }
+
+  /*********************
+  LARGE 1200
+  *********************/
+  @media only screen and (min-width: $large) {
+  }
+
+}

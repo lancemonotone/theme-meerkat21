@@ -1,0 +1,87 @@
+/*
+Subtheme Name: brochure
+Template: m20
+*/
+body.m20-subtheme-welcome {
+
+  .post-content p,
+  .post-excerpt p {
+    color: $dark_purple;
+    font-family: $eph_gothic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  .unfilteredlight {
+    h2 {
+      font-family: EphGothic;
+      display: inline;
+      line-height: 32px;
+
+      span,
+      a {
+        @extend %unfilteredlight;
+      }
+    }
+  }
+
+  .unfiltereddark {
+    h2 {
+      font-family: EphGothic;
+      display: inline;
+      line-height: 32px;
+
+      span,
+      a {
+        @extend %unfiltereddark;
+      }
+    }
+  }
+
+  .btn-dark {
+    a.fl-button {
+      @extend %btndark;
+
+      span {
+        color: $magenta;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .btn-light {
+    a.fl-button {
+      @extend %btnlight;
+
+      span {
+        color: $williams_purple;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .purple-play.bts {
+    font-size: 2em;
+    white-space: pre;
+    color: $white;
+    font-weight: 900;
+    background: rgba($williams_purple, 0.65);
+    padding: 20px 18px 19px 23px;
+    border-radius: 90px;
+    opacity: 1;
+  }
+
+  //overlay info button hover state
+  i.fixwidth {
+    &:hover {
+      color: $ocher;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+/**
+ * This file should contain styles that will be applied to
+ * all module instances within a builder layout.
+ */
+
+@import "import";
+
+.questions {
+
+    .aname {
+        color: #500082;
+        font-size: 15px;
+        font-weight: 700;
+        padding-right: 5px;
+    }
+
+    .pquote {
+        display:none;
+        p {
+            color: #280050;
+        }
+
+    }
+
+    .answer+.answer {
+        padding-top: 30px;
+
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    .questions {
+        .pquote {
+            display: block;
+            float: right;
+            width: 50%;
+            font-weight: 700;
+            padding: 13px;
+            margin: 0 0 13px 13px;
+        }
+    }
+}

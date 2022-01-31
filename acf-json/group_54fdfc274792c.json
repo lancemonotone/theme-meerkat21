@@ -1,0 +1,280 @@
+{
+  "key": "group_54fdfc274792c",
+  "title": "Profile",
+  "fields": [
+    {
+      "key": "field_4fedad922565d",
+      "label": "Williams User Name",
+      "name": "profile_unix",
+      "prefix": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_999965c054910",
+      "label": "Primary Profile Site",
+      "name": "profile_alt_dept",
+      "prefix": "",
+      "type": "select",
+      "instructions": "If this is not your main department, select the site that has your primary profile, and leave the rest of this profile blank.<br>The profile information from the site you select below will be used when viewing your profile on this site.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": [],
+      "default_value": {"": ""},
+      "allow_null": 0,
+      "multiple": 0,
+      "ui": 0,
+      "return_format": "array",
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_4fedad9227d5b",
+      "label": "Additional Contact Info",
+      "name": "profile_contact",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "Your basic contact information will automatically be listed. If you'd like to include additional information (e.g. office hours, lab phone), please enter it below.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c054910",
+      "label": "External Website",
+      "name": "profile_website",
+      "prefix": "",
+      "type": "url",
+      "instructions": "Enter URL, starting with http:\/\/",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_55c128f60bf57",
+      "label": "Upload your CV",
+      "name": "profile_cv_upload",
+      "prefix": "",
+      "type": "file",
+      "instructions": "Upload a pdf file. To update your CV, first remove the file below, then upload your modified pdf.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "uploadedTo",
+      "min_size": "",
+      "max_size": "",
+      "mime_types": ".pdf"
+    },
+    {
+      "key": "field_4fedad922a47a",
+      "label": "At Williams Since",
+      "name": "profile_at_wms_since",
+      "prefix": "",
+      "type": "text",
+      "instructions": "A year, e.g. 2001",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "readonly": 0,
+      "disabled": 0
+    },
+    {
+      "key": "field_4fedad922cbd7",
+      "label": "Areas of Expertise",
+      "name": "profile_interests",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c05701e",
+      "label": "Scholarship & Creative Work",
+      "name": "profile_publications",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "You can list publications, artwork, projects, etc. below.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c05972e",
+      "label": "Awards, Fellowships & Grants",
+      "name": "profile_grants",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c05bea3",
+      "label": "Professional Affiliations",
+      "name": "profile_affiliations",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_wms_profile_other_service",
+      "label": "Other Service",
+      "name": "profile_other_service",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "List non-standing committees and other service work here. This section will appear below standing committees (supplied by PeopleSoft), if any.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c05e54e",
+      "label": "Other Information",
+      "name": "profile_other",
+      "prefix": "",
+      "type": "wysiwyg",
+      "instructions": "The section below can be used to list thesis students, previous posts, etc.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 1
+    },
+    {
+      "key": "field_502965c05e59x",
+      "label": "Hide Degree Dates",
+      "name": "profile_supress_dates",
+      "prefix": "",
+      "type": "true_false",
+      "instructions": "Hide the years in which you received your degrees.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "profile"
+      }
+    ]
+  ],
+  "menu_order": 999,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": ""
+}

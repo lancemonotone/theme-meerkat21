@@ -1,0 +1,73 @@
+@import '../../../../lib/assets/scss/lib/_typography.scss';
+@import '../../../../lib/assets/scss/lib/_breakpoints.scss';
+@import '../../../../lib/assets/scss/lib/_variables.scss';
+
+/*********************
+    Type
+*********************/
+$eph_gothic: "EphGothic",
+sans-serif;
+
+/*********************
+    Colors
+*********************/
+$williams_purple: #500082;
+$dark_purple: #280050;
+$marigold: #FFBE0A;
+$magenta: #B1008E;
+$ocher: #C86914;
+$orange: #FF7800;
+
+/*********************
+    Extends
+*********************/
+
+%btndark {
+    font-family: "EphOctic";
+    background-color: transparent;
+    color: $magenta;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0;
+}
+
+%btnlight {
+    font-family: "EphOctic";
+    background-color: $white;
+    color: $williams_purple;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0;
+}
+
+%unfilteredlight {
+    font-family: EphGothic;
+    background-color: $white;
+    color: $black;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+%unfiltereddark {
+    font-family: EphGothic;
+    background-color: $black;
+    color: $white;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}

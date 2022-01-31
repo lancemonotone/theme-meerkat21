@@ -1,0 +1,26 @@
+<div class="chooser-wizard" role="application" aria-label="{{ settings.wizard_title }}">
+    {% set current_step = 1 %}
+    <div class="wizard-row" role="radiogroup" aria-label="Step {{ current_step }}" aria-current="step" tabindex="-1">
+    {% for button in firstItems %}
+        <button class="btn wizard-btn" data-id="{{ button.ID }}" role="radio" aria-current="false" aria-checked="false" tabindex="0">{{ button.rendered_title }}</button>
+    {% endfor %}
+    </div>
+    {% for id, row in childItems %}
+        {% set current_step = current_step + 1 %}
+        <div id="wizard-{{ id }}" class="wizard-row hidden" role="radiogroup" aria-label="{{ row.parent_title }} options" aria-current="false" aria-disabled="true" tabindex="-1">
+        {% for button in row.items %}
+		    {% set extra_button_class = '' %}
+		    {% if button.type == 'post_type' %}
+			    {% set extra_button_class = ' has-page' %}
+            {% endif %}
+            <button class="btn wizard-btn{{ extra_button_class }}" data-id="{{ button.ID }}" role="radio" aria-current="false" aria-checked="false" tabindex="-1">{{ button.rendered_title }}</button>
+        {% endfor %}
+        </div>
+    {% endfor %}
+    {% for result in terminalItems %}
+		{% set post_type = result.type_label == "Page" ? 'pages' : 'posts' %}
+        <div id="wizard-{{ result.ID }}" class="wizard-row hidden" aria-current="false" aria-label="Last Step" role="section" aria-live="assertive" aria-disabled="true" data-retrieved="0" data-posttype="{{ post_type }}" data-id="{{ result.object_id }}">
+            <a title="{{ result.rendered_title }}" href="{{result.url}}">{{ result.url }}</a>
+        </div>
+    {% endfor %}
+</div>

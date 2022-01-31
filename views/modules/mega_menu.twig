@@ -1,0 +1,19 @@
+<div class="hidden">
+    <div class="" id="megaoverlay" aria-labelledby="menu-toggle-trigger" role="application">
+        {% include 'modules/navigation.twig' with {'nav_obj' : navigation.mega_global, 'menu_class' : 'global-navigation'} %}
+        {% include 'modules/navigation.twig' with {'nav_obj' : navigation.mega_featured, 'menu_class' : 'featured-links'} %}
+        {# <div id="quicklinks-container" class="widget widget_nav_menu"> #}
+                {# Located in wp-content/lib/views #}
+                {# {% include 'widgets/quicklinks_front.twig' %} #}
+        {# </div> <!-- #quicklinks-container --> #}
+        <div>
+        <h3>Quicklinks Placeholder</h3>
+        <a><span class="h4 title top-level">Quicklinks</span></a>
+        <ul>
+            <li><a>Tellus Condimentum Aenean</a></li>
+            <li><a>Tellus Condimentum Aenean</a></li>
+        </ul>
+        </div>
+        {% include 'modules/navigation.twig' with {'nav_obj' : navigation.mega_social, 'menu_class' : 'social-navigation'} %}
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{
+    "key": "group_5eab28111b7f9",
+    "title": "Student Resource Fields",
+    "fields": [
+        {
+            "key": "field_5eab2822aa83a",
+            "label": "Link to Resource",
+            "name": "link_to_resource",
+            "type": "url",
+            "instructions": "enter the link to the resource",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "26"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "student_resource"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1635191936
+}

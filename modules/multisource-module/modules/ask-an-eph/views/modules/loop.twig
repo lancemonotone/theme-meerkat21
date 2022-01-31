@@ -1,0 +1,23 @@
+<div class="fl-post-carousel-post" {{ itemschema }}>
+    {{ schemameta }}
+    <div class="fl-post-carousel-text-wrap">
+
+        <div class="fl-post-carousel-text">
+            <div class="one-eph">
+                {{ post.edit_link }}
+                <a href="{{ post.link_url }}" title="Go Ask an Eph!">
+
+                    <figure class="quad-image no-quad">
+                        <div class="inner">
+                            <img alt="{{ post.name }}" src="{{ post.img.src|resize(200, 300) }}"/>
+                            <div class="custom-caption-title">{{ post.name }} '{{ post.year }}</div>
+                        </div>
+                        <div class="eph-caption-text">{{ post.major }}
+                        </div>
+                    </figure>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

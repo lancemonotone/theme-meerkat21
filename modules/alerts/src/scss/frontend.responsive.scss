@@ -1,0 +1,25 @@
+/**
+ * This file is optional.
+ *
+ * This file should contain styles that will be applied to all module instances when
+ * the Small Device breakpoint set in Global Settings (Ctrl + U) has been reached.
+ *
+ * Responsive Layout can be set or disabled in the global settings panel.
+ *
+ * Note: Unlike the Small Device breakpoint, there is no file to override the
+ * Medium Device breakpoint in Global Settings. You should use a media query for all other breakpoints.
+ */
+@import "import";
+
+.alert-wrapper {
+
+  .fl-module-content {
+
+    .fl-icon-wrap {
+      margin: 0 5rem;
+    }
+    .icon--close {
+      margin: 0 5rem;
+    }
+  }
+}

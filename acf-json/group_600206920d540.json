@@ -1,0 +1,96 @@
+{
+    "key": "group_600206920d540",
+    "title": "Story Label",
+    "fields": [
+        {
+            "key": "field_600206a960716",
+            "label": "Story Label",
+            "name": "story_label",
+            "type": "text",
+            "instructions": "From one to three words describing the news item. This label will appear above the blurb in some contexts. For In the News this should be the source site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 36
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "in_the_news"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "announcements"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "magazine"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "stories"
+            },
+            {
+                "param": "site_id",
+                "operator": "==",
+                "value": "270"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635191936
+}

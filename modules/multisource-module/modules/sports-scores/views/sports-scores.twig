@@ -1,0 +1,11 @@
+{% if stories|length > 0 %}
+<h2 class="sports-header">SPORTS NEWS & HIGHLIGHTS</h2>
+<div class="sports-module">
+  {% for story in stories %} {% if loop.index <= num_to_show %}
+  <div class="sports-column">
+    <h3 class="sports-title">{{ story.excerpt }}</h3>
+   
+  </div>
+  {% endif %} {% endfor %}
+</div>
+{% endif %}

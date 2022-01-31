@@ -1,0 +1,23 @@
+{% if ldap %}
+<div class="one-eph">
+{{edit_link}}
+<figure class="quad-image no-quad">
+  <div class="" >
+    <img style="border-radius:50%;" alt="{{post.title}}" src="{{ post.thumbnail.src ? post.thumbnail.src|resize(300, 300) : rando }}" />
+  </div>
+  <div class="custom-caption-text">
+    <div><strong>{{post.title}}</strong></div>
+  <br/>
+    <span class='title'>{{ldap.title}}</span>
+    <br>
+<div><a href="mailto:{{ldap.email}}">{{ldap.email}}</a></div>
+    {% if profile_dept != 'finaid' %}
+        <div class="profile-other">
+            {{post.profile_other}}
+        </div>
+    {% endif %}
+
+  </div>
+</figure>
+</div>
+{% endif %}

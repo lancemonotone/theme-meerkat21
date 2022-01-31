@@ -1,0 +1,29 @@
+
+
+<div id="simplevideos-wrapper" >
+
+    <div id="simplevideos" data-moduletype="simplevideos" >
+      {% if videos %}
+        {% for video in videos %} 
+        
+        {% set imgurl =  function('wp_get_attachment_image_url', video.video_image, 'medium') %}
+    
+            <div class="simple-video {{loop.index == 2 ? 'expand'}}">
+              <picture>
+                   {# <source srcset="{{ imgurl|towebp }}" type="image/webp"> #}
+                    <source srcset="{{ imgurl|retina(1)  }} 1x,
+                        {{ imgurl|retina(2) }} 2x,
+                        {{ imgurl|retina(3) }} 3x,
+                        {{ imgurl|retina(4) }} 4x">
+                    <img src="{{ imgurl|tojpg }}" alt="{{ video.alt ?: video.caption }}">
+                    <a class="playbtn" href="{{ video.video_src }}" caption="{{video.video_caption}}"  data-featherlight="iframe"><i class="btb bt-play-circle bt-3x"></i> <span class="screen-reader-text">Play</span></a>
+            </picture>
+
+            </div>
+        {% endfor %}
+      {% else %}
+        <div class="error" style="text-align: center;">Add some videos!</div>
+      {% endif %}
+    </div>
+
+</div>

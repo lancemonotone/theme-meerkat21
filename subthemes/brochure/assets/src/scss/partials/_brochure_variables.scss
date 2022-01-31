@@ -1,0 +1,26 @@
+@import '../../../../lib/assets/scss/lib/_typography.scss';
+@import '../../../../lib/assets/scss/lib/_breakpoints.scss';
+@import '../../../../lib/assets/scss/lib/_variables.scss';
+
+/*********************
+    Type
+*********************/
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
+
+$plexsans: IBM Plex Sans;
+$plexmono: IBM Plex Mono;
+$helvetica_neue: Helvetica Neue;
+
+
+$monospace: $plexmono, monospace;
+$sans_plex: $plexsans, $helvetica_neue, sans-serif;
+
+
+/*********************
+    Colors
+*********************/
+$marigold: #E6AD28;
+$lichen: #5C9396;
+$lichendark: darken($lichen, 10%);
+$dark_purple: #3C2151;

@@ -1,0 +1,11 @@
+<label for="select_season">Choose season</label>
+<select id="select_season" class="season-picker" name="select_season">
+    {% for select_season in all_seasons %}
+        <option value="{{ select_season }}" {{ select_season == season ? 'selected' }}>{{ select_season }}</option>
+    {% endfor %}
+</select>
+<script>
+  document.querySelector('#select_season').addEventListener('change', function () {
+    location.href = window.location.pathname + '?season=' + this.value;
+  });
+</script>

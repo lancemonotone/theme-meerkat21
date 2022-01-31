@@ -1,0 +1,53 @@
+{% extends 'loop-page.twig' %}
+
+{% block content %}
+    <h1 class="page-title">{{ post.post_title }}</h1>
+
+    <h1 class="main-title">{{ profile.full_name }}</h1>
+    <article id="post-{{ profile.post_id }}"
+            class="cf {{ fn('get_post_class') | join(' ') }} {{ post.get_field('page_style') }}">
+        {{ profile.pic }}
+
+        <div class="profile-section profile-contact">
+            {% if profile.post_id and function('current_user_can','edit_posts') %}
+                <a href="{{ function('get_edit_post_link', profile.post_id) }}" class="edit-me edit-link">EDIT THIS PROFILE</a>
+            {% endif %}
+
+            {{ profile.title }}
+
+            {{ profile.email }}
+
+            {{ profile.profile_website }}
+
+            {{ profile.phone }}
+
+            {{ profile.profile_cv_upload }}
+
+            {{ profile.address }}
+
+            {{ profile.profile_at_wms_since }}
+
+        </div>
+
+        {{ profile.profile_contact }}
+
+        {{ profile.educ }}
+
+        {{ profile.profile_interests }}
+
+        {{ profile.wms_course }}
+
+        {{ profile.profile_publications }}
+
+        {{ profile.profile_grants }}
+
+        {{ profile.profile_affiliations }}
+
+        {{ profile.committees }}
+
+        {{ profile.profile_other_service }}
+
+        {{ profile.profile_other }}
+
+    </article>
+{% endblock %}

@@ -1,0 +1,44 @@
+button {
+    .toggle-title {
+        //used with widgets/button_toggle.twig to build a button that toggles between icon and text
+        @extend %visuallyhidden;
+    }
+}
+
+//@todo maybe move this to an admin component stylesheet or eliminate?
+//edit me links for widgets etc. that look like buttons
+a.edit-me {
+    z-index: 9999;
+    color: $dark_gray;
+    border: 1px solid $lt_gray;
+    display: inline-block;
+    padding: 6px 7px 7px;
+    font-size: $base_font_size - 3px;
+    background-color: $white;
+    position: relative;
+    line-height: inherit;
+    cursor: pointer;
+    margin: $global_padding 0;
+
+    &:hover {
+        color: $black;
+        border-color: $dark_gray;
+    }
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+    button {
+        .toggle-title {
+            //used with widgets/button_toggle.twig to build a button that toggles between icon and text
+            all: unset;
+        }
+
+        //used with widgets/button_toggle.twig to build a button that toggles between icon and text
+        .toggle-icon {
+            display: none;
+        }
+    }
+}

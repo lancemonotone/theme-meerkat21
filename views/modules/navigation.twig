@@ -1,0 +1,54 @@
+{#{{ dump(site) }}#}
+{% if nav_obj.count %}
+    {% if(toggle) %}
+        {% include 'widgets/button_toggle.twig' with {
+            'target' : '#' ~ (menu_id ? menu_id : menu_class),
+            'title' : title ? title : __('Section Menu'),
+        } %}
+
+        <div class="menu-container">
+            <a class="site-title" href="{{ site.url }}" rel="home" title="{{ __('Go to') }} {{ site.name }}"> {{ site.name }} MENU</a>
+    {% endif %}
+            <div id="{{ menu_id ? menu_id : menu_class }}">
+                <nav class="{{ menu_class }}" role="navigation" aria-label="{{ __(nav_obj.name) }}">
+            
+                    <ul role="menu" class="menu {{ load_collapsed ? 'load_collapsed' }}">
+                        {% for item in nav_obj.get_items %}
+                            <li role='none' class="nav-item {{ item.classes | join(' ') }} {% if loop.last %}last-toplevel-nav-item{% endif %}">
+                                <a role='menuitem' class="nav-link top-level-a" href="{{ item.get_link }}" aria-label="{{ item.get_children ? 'Toggle ' }}{{ item.title }}">
+                                    <span class="{{ is_social ? 'screen-reader-text' : 'h4 title top-level' }}">{{ item.title }}</span>
+                                    {% if show_description and item.description %}
+                                        <span class="description">{{ item.description }}</span>
+                                    {% endif %}
+                                </a>
+                                {% if item.get_children %}
+                                    <ul id="submenu-{{ item.slug }}" class="nav nav-drop child">
+                                        {% for child in item.get_children %}
+                                            <li role='none' class="nav-item nav-drop-item {{ child.classes | join(' ') }}">
+                                                <a role='menuitem' class="nav-link" href="{{ child.get_link }}" title="{{ child.title }}">{{ child.title }}{% if show_description and child.description %}<span class="description">{{ child.description }}</span>{% endif %}</a>
+                                                {% if child.get_children %}
+                                                    <ul id="submenu-{{ child.slug }}" class="nav nav-drop grandchild">
+                                                        {% for grandchild in child.get_children %}
+                                                            <li role='none' class="nav-item nav-drop-item {{ grandchild.classes | join(' ') }}">
+                                                                <a role='menuitem' class="nav-link" href="{{ grandchild.get_link }}" title="{{ grandchild.title }}">{{ grandchild.title }}{% if show_description and child.description %}<span class="description">{{ grandchild.description }}</span>{% endif %}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+  
+            </nav><!-- .{{ menu_class }} -->
+            {% if fn('current_user_can', constant('CAPABILITY_THRESH') ) and nav_obj.id != 90974 %} {# global navigation id #}
+                <a class="edit-me" href="{{ site.siteurl }}/wp-admin/nav-menus.php?action=edit&menu={{ nav_obj.id }}">Edit Menu</a>
+            {% endif %}
+    </div>
+    {% if(toggle) %}
+        </div><!-- .menu-container -->
+    {% endif %}
+{% endif %}

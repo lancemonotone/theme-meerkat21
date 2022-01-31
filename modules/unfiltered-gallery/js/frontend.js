@@ -1,0 +1,2 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector(".ug_open");e&&(jQuery(".ug a ").wmsDoOverlay(),e.onclick=function(e){e.preventDefault(),document.querySelector(".ug a").click()})}))})();
+//# sourceMappingURL=frontend.js.map

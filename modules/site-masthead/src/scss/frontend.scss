@@ -1,0 +1,43 @@
+/*reset spacing*/
+.fl-module-site-masthead .site-banner .site-title{
+  margin: 0 0 8px;
+}
+
+/*masthead background with photo bg*/
+
+.fl-row-bg-photo .fl-module-site-masthead .site-banner,
+.fl-row-bg-parallax .fl-module-site-masthead .site-banner {
+  background-color: transparent;
+}
+
+//padding on bottom for header bc without image
+[data-type="header"] .fl-row-bg-none > .fl-row-content-wrap{
+  padding-bottom: 0;
+}
+
+/*site title and bc with photo background*/
+
+.fl-row-bg-photo {
+  .site-title, .breadcrumb a {
+    color: #fff;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  }
+  .breadcrumbs {
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/*hover*/
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+.fl-row-bg-photo .breadcrumb a:hover {
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+}
+

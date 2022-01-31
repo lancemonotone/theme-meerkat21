@@ -1,0 +1,15 @@
+.breadcrumbs {
+  padding-top: 20px;
+  //font-size: $base_font_size;
+  font-weight: 500;
+  font-style: italic;
+  color: #606060;
+  letter-spacing: 0.9px;
+  a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+  }
+  .breadcrumb-sep:after{
+    content: '\00BB';
+  }
+}

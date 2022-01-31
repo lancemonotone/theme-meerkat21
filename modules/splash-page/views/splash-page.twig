@@ -1,0 +1,36 @@
+
+{% set videocode = '<video  id="splash-control" class="splash-video" poster="' ~ settings.poster_img_src ~ '" autoplay controls>
+    <source src="' ~ settings.mp4_url ~ '" type="video/mp4">
+    <source src="' ~ settings.ogg_url ~ '" type="video/ogg">
+    Your browser does not support HTML video.
+</video>' %}
+
+{% if settings.my_select_field == 'mp4' %}
+
+<div id="splash-overlay">
+  <a id="splash-overlay-close" aria-label="Close">CLOSE<span class="btb bt-times"></span></a>
+    {{videocode}}
+</div>
+<a href="#" class="splash-link" data-featherlight='{{videocode}}' data-featherlight-variant="fullscreen">
+{{settings.link_text}}
+</a>
+{% else %}
+<div id="splash-overlay">
+  <a id="splash-overlay-close" aria-label="Close">CLOSE<span class="btb bt-times"></span></a>
+    {# <div id="player">inhere</div> #}
+    <iframe id="splash-player" type="text/html" width="" height=""
+  src="{{settings.embed_url}}"
+  frameborder="0"  allow="autoplay; encrypted-media" allowfullscreen>
+  </iframe>
+</div>
+{# youtube overlay disabled #}
+{# <a href="{{settings.embed_url}}" class="splash-link" data-featherlight="iframe" data-featherlight-variant="fullscreen">
+{{settings.link_text}}
+</a> #}
+<a href="#" class="splash-link" data-featherlight='{{videocode}}' data-featherlight-variant="fullscreen">
+{{settings.link_text}}
+</a>
+{% endif %}
+
+
+

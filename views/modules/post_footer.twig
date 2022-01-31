@@ -1,0 +1,51 @@
+{# @uses printfriendly [false(*)|true] #}
+<footer class="entry-footer">
+    {% do action('bb_entry_footer') %}
+
+    {% if post.can_edit %}
+        {% include 'modules/edit_link.twig' %}
+    {% endif %}
+
+    {% include 'modules/last_updated.twig' %}
+
+    {% if printfriendly | default(false) %}
+
+        {% include 'modules/printfriendly.twig' %}
+
+    {% endif %}
+
+    {% if fn('comments_open', post.ID) or fn('have_comments', post.ID) %}
+
+        {% if catopts.do_display('comment_status') %}
+
+            {% include 'modules/comment_status.twig' %}
+
+        {% endif %}
+
+    {% endif %}
+
+    {% if catopts.do_display('related_tax') %}
+
+            {% include 'modules/related_tax.twig' %}
+
+    {% endif %}
+
+</footer><!-- .entry-footer -->
+
+{% if catopts.do_display('author_bio') %}
+
+    {% include 'modules/author_bio.twig' %}
+
+{% endif %}
+
+{% if template == 'single' and catopts.do_display('pagination') %}
+
+    {% include 'modules/post_pagination.twig' %}
+
+{% endif %}
+
+{% if catopts.do_display('comment_form') %}
+
+    {% include 'modules/comment_form.twig' %}
+
+{% endif %}

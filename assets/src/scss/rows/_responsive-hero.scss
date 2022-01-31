@@ -1,0 +1,219 @@
+// responsive heros- with text that jumps out from background image on mobile
+body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "input1"
+    "input2"
+    "desktop"
+    "mobile";
+
+  .fl-col-group:nth-of-type(1) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    background-color: transparent;
+    z-index: 10;
+    display: -ms-grid;
+    display: grid;
+    grid-area: desktop;
+    max-width: 1200px;
+    width: 100vw;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    margin-top: 60px;
+  }
+
+  .fl-col-group:nth-of-type(2) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: mobile;
+    z-index: 10;
+
+    .fl-rich-text,
+      {
+      color: black;
+    }
+
+    .ctaheader,
+    .cta-bar {
+      color: black;
+    }
+
+    .cta-link {
+      color: #497476;
+    }
+  }
+
+  .fl-col-group:nth-of-type(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: desktop;
+    z-index: 5;
+    height: 100%;
+
+    .fl-col,
+    .fl-col-content {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .fl-col-group:nth-of-type(4) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    opacity: .5;
+    grid-area: mobile;
+    z-index: 5;
+
+    .mobileplaceholder {
+      display: none;
+    }
+  }
+}
+
+
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: $tablet) {
+
+  // responsive heros- with text that jumps out from background image on mobile
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "input1"
+      "input2"
+      "desktop"
+      "mobile";
+
+    p,
+    a,
+    h3 {
+      text-shadow: 0 0 4px #000;
+    }
+
+    .fl-col-group:nth-of-type(1) {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      background-color: transparent;
+      z-index: 10;
+      grid-area: input1;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      -ms-grid-row-align: end;
+      -ms-grid-column-align: end;
+      place-self: end;
+    }
+
+    .fl-col-group:nth-of-type(2) {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+      background-color: transparent;
+      z-index: 10;
+      grid-area: input2;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      -ms-grid-row-align: start;
+      -ms-grid-column-align: start;
+      place-self: start;
+
+      .fl-rich-text.fl-rich-text {
+        color: white;
+      }
+
+      .ctaheader,
+      .cta-bar,
+      .cta-link {
+        color: white;
+      }
+
+    }
+
+    @media only screen and (min-width: $tablet) {
+
+      // responsive heros- with text that jumps out from background image on mobile
+      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1
+      }
+
+      // responsive heros- with text that jumps out from background image on mobile
+      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1
+      }
+    }
+
+    .fl-col-group:nth-of-type(3) {
+      -ms-grid-column: 1;
+      grid-column-start: 1;
+      -ms-grid-column-span: 0;
+      grid-column-end: 1;
+      -ms-grid-row: 1;
+      grid-row-start: 1;
+      -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+      z-index: 5;
+      height: 100%;
+
+      .fl-col,
+      .fl-col-content {
+        height: 100%;
+        min-width: 100%;
+      }
+    }
+
+    .fl-col-group:nth-of-type(4) {}
+  }
+
+  body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
+    .fl-col-group:nth-of-type(4) {
+      .mobileplaceholder {
+        display: none;
+      }
+    }
+  }
+
+  // responsive heros- with text that jumps out from background image on mobile
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(1) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    z-index: 100;
+    position: relative;
+  }
+
+  // responsive heros- with text that jumps out from background image on mobile
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(2) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    z-index: 100;
+    position: relative;
+  }
+
+  // responsive heros- with text that jumps out from background image on mobile
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    z-index: 1;
+    position: relative;
+  }
+
+  // responsive heros- with text that jumps out from background image on mobile
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(4) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    z-index: 1;
+    position: relative;
+  }
+}

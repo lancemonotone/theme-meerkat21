@@ -1,0 +1,18 @@
+{% if catopts.do_display('sharing') or fn('is_page') %}
+    {# How long is this article? Do we need links at top and bottom? #}
+    {% set len = post.post_content|length %}
+    {% if location == 'before' or ( location == 'after' and len > 3000 ) %}
+        {% set permalink = fn('get_permalink', post) %}
+        {% set permalink_encoded = fn('urlencode', permalink) %}
+        {% set title_encoded = fn('urlencode', post.post_title) %}
+        <div class="fa-ces sharing-links">
+            <div class="sharing-icons">
+                <div><a class="sharing facebook" href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3D{{ permalink_encoded }}%26ret%3Dlogin&display=popup"></a></div>
+                <div><a class="sharing twitter" href="https://twitter.com/intent/tweet?text={{ title_encoded }}&url={{ permalink_encoded }}&related="></a></div>
+                <div><a class="sharing linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ permalink_encoded }}"></a></div>
+                <div><a class="sharing email" href="mailto:?subject=A Williams story for you&body={{ title_encoded }} {{ permalink_encoded }}"></a></div>
+            </div>
+            <div class="share-icon"></div>
+        </div>
+    {% endif %}
+{% endif %}

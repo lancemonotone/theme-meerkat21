@@ -1,0 +1,19 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+   {% include 'modules/archive/title.twig' %}
+
+    {% if bb_themer_layout_content %}
+        {{ bb_themer_layout_content }}
+    {% else %}
+        {% include 'modules/archive/posts.twig' %}
+    {% endif %}
+
+    {% if not bb_themer_layout_content and not catopts.do_display('facetwp_filters') and not catopts.do_display('facetwp_template') %}
+
+       {% include 'modules/post_pagination.twig' %}
+
+    {% endif %}
+
+{% endblock %}
