@@ -16,7 +16,8 @@ class BB_Assets_Purge {
     }
 
     function add_toolbar_items(\WP_Admin_Bar $admin_bar) {
-        if (is_super_admin()) {
+        // Is administrator
+        if (current_user_can( 'edit_posts' )) {
             $admin_bar->add_menu(array(
                 'id'    => $this->action,
                 'title' => 'Purge BB Assets',

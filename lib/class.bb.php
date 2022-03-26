@@ -56,12 +56,27 @@ class BB {
         add_filter('fl_builder_module_frontend_file', array(&$this, 'set_frontend_path'), 10, 2);
         add_filter('fl_builder_render_module_html', array(&$this, 'render_frontend_file'), 10, 4);
 
+        // Speed up loading and cut page weight
+        add_action( 'wp_enqueue_scripts', [$this, 'disable_unneeded_bb_scripts'], 9999 );
+
         // Allow editors and admin to save iframes
         add_filter( 'fl_builder_ui_js_config', function( $config ) {
             $config['userCaps']['unfiltered_html'] = true;
             return $config;
             },10
         );
+    }
+
+    public function disable_unneeded_bb_scripts() {
+            wp_dequeue_style( 'font-awesome' ); // FontAwesome 4
+            wp_enqueue_style( 'font-awesome-5' ); // FontAwesome 5
+            wp_dequeue_style( 'jquery-magnificpopup' );
+            wp_dequeue_script( 'jquery-magnificpopup' );
+            wp_dequeue_script( 'bootstrap' );
+            //wp_dequeue_script( 'imagesloaded' );
+            wp_dequeue_script( 'jquery-fitvids' );
+            wp_dequeue_script( 'jquery-throttle' );
+            wp_dequeue_script( 'jquery-waypoints' );
     }
 
     public function refresh_bb_cache() {

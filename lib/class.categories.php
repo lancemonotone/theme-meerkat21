@@ -4,7 +4,7 @@ namespace m21;
 
 /*
 
-Allows users to configure what bits of information get displayed in the loop when viewing categories of posts or single posts. 
+Allows users to configure what bits of information get displayed in the loop when viewing categories of posts or single posts.
 Configuration options are saved on a per-category basis, and are edited via the edit category menus on the dashboard.
 
 This script also provides sticky post support for category views.
@@ -19,38 +19,34 @@ class Categories {
     public $current_cat_order_dir;
 
     function __construct() {
-        add_action('wp_loaded', array(&$this, 'init'), 20);
+        add_action( 'wp_loaded', array(&$this, 'init'), 20 );
 
         // HOOKS
         // admin edit category/term/tag
-        if (is_plugin_active('custom-post-type-ui')) {
-            // Add category options to all registered taxes
-            add_action('cptui_post_register_taxonomies', function() {
-                foreach (array_keys(get_taxonomies('', 'names')) as $taxonomy) {
-                    add_filter($taxonomy . '_edit_form', array(&$this, 'edit_term_form'));
+        add_action( 'init', function() {
+            if( $GLOBALS['pagenow'] === 'term.php' ) {
+                foreach( array_keys( get_taxonomies( array('public' => true) ) ) as $taxonomy ) {
+                    add_filter( $taxonomy . '_edit_form', array(&$this, 'edit_term_form') );
                 }
-            });
-        } else {
-            // Just add options to category tax
-            add_filter('category_edit_form', array(&$this, 'edit_term_form'));
-        }
+            }
+        } );
 
         //add_filter( 'edit_tag_form', array( &$this, 'edit_term_form' ));
-        add_action('edit_term', array(&$this, 'edit_term_save'));
+        add_action( 'edit_term', array(&$this, 'edit_term_save') );
 
         // enable sticky posts for all archive pages (category, tag, etc)
-        add_action('loop_start', array(&$this, 'enable_stickies'));
+        add_action( 'loop_start', array(&$this, 'enable_stickies') );
 
         // load current category options
-        add_action('loop_start', array(&$this, 'get_current_cat_options'));
+        add_action( 'loop_start', array(&$this, 'get_current_cat_options') );
 
         // enable next/prev links at bottom of single post to use cat config order options
-        add_filter('get_previous_post_join', array(&$this, 'adjacent_join_prev'), null, 5);
-        add_filter('get_next_post_join', array(&$this, 'adjacent_join_next'), null, 5);
-        add_filter('get_previous_post_where', array(&$this, 'adjacent_where_prev'));
-        add_filter('get_next_post_where', array(&$this, 'adjacent_where_next'));
-        add_filter('get_previous_post_sort', array(&$this, 'adjacent_sort_prev'));
-        add_filter('get_next_post_sort', array(&$this, 'adjacent_sort_next'));
+        add_filter( 'get_previous_post_join', array(&$this, 'adjacent_join_prev'), null, 5 );
+        add_filter( 'get_next_post_join', array(&$this, 'adjacent_join_next'), null, 5 );
+        add_filter( 'get_previous_post_where', array(&$this, 'adjacent_where_prev') );
+        add_filter( 'get_next_post_where', array(&$this, 'adjacent_where_next') );
+        add_filter( 'get_previous_post_sort', array(&$this, 'adjacent_sort_prev') );
+        add_filter( 'get_next_post_sort', array(&$this, 'adjacent_sort_next') );
     }
 
     function init() {
@@ -63,24 +59,24 @@ class Categories {
      */
     function get_current_cat_options() {
         global $post;
-        if ( ! is_single()) {
+        if( ! is_single() ) {
             return;
         }
         $has_match = false;
-        $cats      = get_the_category($post->ID);
-        foreach ($cats as $key => $val) {
-            if ($tmp = $this->get_config_options($val->term_id)) {
-                $cat_opt                     = $tmp;
-                $this->current_cat_orderby   = $cat_opt['multi_orderby'];
+        $cats = get_the_category( $post->ID );
+        foreach( $cats as $key => $val ) {
+            if( $tmp = $this->get_config_options( $val->term_id ) ) {
+                $cat_opt = $tmp;
+                $this->current_cat_orderby = $cat_opt['multi_orderby'];
                 $this->current_cat_order_dir = $cat_opt['multi_order_dir'];
-                $has_match                   = true;
+                $has_match = true;
                 break;
             }
         }
 
-        if ( ! $has_match) {
+        if( ! $has_match ) {
             // no configuration available, use default settings
-            $this->current_cat_orderby   = $this->options['multi_orderby']['default'];
+            $this->current_cat_orderby = $this->options['multi_orderby']['default'];
             $this->current_cat_order_dir = $this->options['multi_order_dir']['default'];
         }
     }
@@ -88,17 +84,17 @@ class Categories {
     //---- HOOKS to modify next/prev post links (on a single post) ----//
 
     function adjacent_join_prev($join, $in_same_term, $excluded_terms, $taxonomy, $post) {
-        return $this->adjacent_join($join, 'prev', $in_same_term, $excluded_terms, $taxonomy, $post);
+        return $this->adjacent_join( $join, 'prev', $in_same_term, $excluded_terms, $taxonomy, $post );
     }
 
     function adjacent_join_next($join, $in_same_term, $excluded_terms, $taxonomy, $post) {
-        return $this->adjacent_join($join, 'next', $in_same_term, $excluded_terms, $taxonomy, $post);
+        return $this->adjacent_join( $join, 'next', $in_same_term, $excluded_terms, $taxonomy, $post );
     }
 
     function adjacent_join($join, $next_or_prev, $in_same_term, $excluded_terms, $taxonomy, $post) {
         global $wpdb;
 
-        if ( ! $in_same_term && empty($excluded_terms)) {
+        if( ! $in_same_term && empty( $excluded_terms ) ) {
             $join .= " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";
         }
 
@@ -106,20 +102,20 @@ class Categories {
     }
 
     function adjacent_where_prev($where) {
-        return $this->adjacent_where($where, 'prev');
+        return $this->adjacent_where( $where, 'prev' );
     }
 
     function adjacent_where_next($where) {
-        return $this->adjacent_where($where, 'next');
+        return $this->adjacent_where( $where, 'next' );
     }
 
     function adjacent_where($where, $next_or_prev) {
         global $post;
 
-        $cmp       = $this->get_cmp($next_or_prev, 'symbol');
+        $cmp = $this->get_cmp( $next_or_prev, 'symbol' );
         $new_where = 'WHERE ';
 
-        switch ($this->current_cat_orderby) {
+        switch( $this->current_cat_orderby ) {
             case 'date' :
                 $new_where .= "p.post_date " . $cmp . " '" . $post->post_date . "' AND";
                 break;
@@ -140,18 +136,18 @@ class Categories {
     }
 
     function adjacent_sort_prev($sort) {
-        return $this->adjacent_sort($sort, 'prev');
+        return $this->adjacent_sort( $sort, 'prev' );
     }
 
     function adjacent_sort_next($sort) {
-        return $this->adjacent_sort($sort, 'next');
+        return $this->adjacent_sort( $sort, 'next' );
     }
 
     function adjacent_sort($sort, $next_or_prev) {
-        $cmp      = $this->get_cmp($next_or_prev, 'word');
+        $cmp = $this->get_cmp( $next_or_prev, 'word' );
         $new_sort = ' ORDER BY ';
 
-        switch ($this->current_cat_orderby) {
+        switch( $this->current_cat_orderby ) {
             case 'date' :
                 $new_sort .= "p.post_date $cmp";
                 break;
@@ -172,20 +168,20 @@ class Categories {
 
     function get_cmp($next_or_prev, $symbol_or_word) {
         $cmp = '';
-        if ($symbol_or_word == 'symbol') {
+        if( $symbol_or_word == 'symbol' ) {
             $cmp = '>'; // covers ASC next, DESC prev
-            if ($this->current_cat_order_dir == 'ASC' && $next_or_prev == 'prev') {
+            if( $this->current_cat_order_dir == 'ASC' && $next_or_prev == 'prev' ) {
                 $cmp = '<';
             }
-            if ($this->current_cat_order_dir == 'DESC' && $next_or_prev == 'next') {
+            if( $this->current_cat_order_dir == 'DESC' && $next_or_prev == 'next' ) {
                 $cmp = '<';
             }
         } else {
             $cmp = 'ASC';
-            if ($this->current_cat_order_dir == 'ASC' && $next_or_prev == 'prev') {
+            if( $this->current_cat_order_dir == 'ASC' && $next_or_prev == 'prev' ) {
                 $cmp = 'DESC';
             }
-            if ($this->current_cat_order_dir == 'DESC' && $next_or_prev == 'next') {
+            if( $this->current_cat_order_dir == 'DESC' && $next_or_prev == 'next' ) {
                 $cmp = 'DESC';
             }
         }
@@ -209,19 +205,19 @@ class Categories {
             </p>
 
         <?php
-        $cat        = $cat_data->term_id;
+        $cat = $cat_data->term_id;
         $option_key = 'wms_category_config_' . $cat;
 
-        $saved       = get_option($option_key);
+        $saved = get_option( $option_key );
         $single_opts = array();
-        $multi_opts  = array();
+        $multi_opts = array();
 
-        foreach ($this->options as $option => $vals) {
+        foreach( $this->options as $option => $vals ) {
             // split out into multi & single options
-            if ($vals['view'] == 'single') {
-                $single_opts[ $option ] = $vals;
+            if( $vals['view'] == 'single' ) {
+                $single_opts[$option] = $vals;
             } else {
-                $multi_opts[ $option ] = $vals;
+                $multi_opts[$option] = $vals;
             }
         }
 
@@ -229,13 +225,13 @@ class Categories {
         $class = 'cat-config-single';
         $title = 'Single Post Display';
         $blurb = 'When viewing an individual post';
-        $this->build_option_block($class, $title, $blurb, $single_opts, $saved);
+        $this->build_option_block( $class, $title, $blurb, $single_opts, $saved );
 
         // build multi view
         $class = 'cat-config-multi';
         $title = 'Multiple Post Display';
         $blurb = 'When viewing a group of posts (e.g. blog, category, search results)';
-        $this->build_option_block($class, $title, $blurb, $multi_opts, $saved);
+        $this->build_option_block( $class, $title, $blurb, $multi_opts, $saved );
 
         echo '</div><!-- end cat-config-options -->';
         echo '<div style="clear:both;"></div>';
@@ -256,19 +252,19 @@ class Categories {
         echo '<div class="' . $class . '">';
         echo '<h3>' . $title . '</h3>';
         echo '<div class="cat-config-blurb">' . $blurb . '</div>';
-        foreach ($opts as $option => $vals) {
+        foreach( $opts as $option => $vals ) {
             echo '<div class="cat-config-item">';
             // check for saved, if nothing, use default
-            if ($saved) {
-                $prepop = $saved[ $option ];
+            if( $saved ) {
+                $prepop = $saved[$option];
                 // allow a false saved value too override a true default
-                if ( ! $prepop && $vals['default']) {
-                    unset($vals['default']);
+                if( ! $prepop && $vals['default'] ) {
+                    unset( $vals['default'] );
                 }
             } else {
-                $prepop = $this->options[ $option ]['default'];
+                $prepop = $this->options[$option]['default'];
             }
-            echo Form_Utils::buildField($option, $vals, $prepop);
+            echo Form_Utils::buildField( $option, $vals, $prepop );
             echo '</div>';
         }
         echo '</div>';
@@ -282,46 +278,46 @@ class Categories {
         $option_key = 'wms_category_config_' . $cat;
 
         $cat_options = array();
-        foreach ($this->options as $option => $vals) {
+        foreach( $this->options as $option => $vals ) {
             //  save stuff
-            $cat_options[ $option ] = $_POST[ $option ];
+            $cat_options[$option] = $_POST[$option];
         }
-        update_option($option_key, $cat_options);
+        update_option( $option_key, $cat_options );
     }
 
     // grab saved category settings from the options table
     function get_config_options($term_id) {
         $option_key = 'wms_category_config_' . $term_id;
 
-        return get_option($option_key);
+        return get_option( $option_key );
     }
 
     //---- STICKY POST ----//
     // sticky support- move sticky posts to the top of category/tag pages
     function enable_stickies($wp_query) {
-        if ( ! is_archive()) {
+        if( ! is_archive() ) {
             return false;
         }
 
         // Put sticky posts at the top of the posts array
-        $sticky_posts = get_option('sticky_posts');
-        $page         = $wp_query->query_vars['paged'];
-        if ($page <= 1 && is_array($sticky_posts) && ! empty($sticky_posts)) {
-            $num_posts     = count($wp_query->posts);
+        $sticky_posts = get_option( 'sticky_posts' );
+        $page = $wp_query->query_vars['paged'];
+        if( $page <= 1 && is_array( $sticky_posts ) && ! empty( $sticky_posts ) ) {
+            $num_posts = count( $wp_query->posts );
             $sticky_offset = 0;
             // Loop over posts and relocate stickies to the front.
-            for ($i = 0; $i < $num_posts; $i++) {
-                if (in_array($wp_query->posts[ $i ]->ID, $sticky_posts)) {
-                    $sticky_post = $wp_query->posts[ $i ];
+            for( $i = 0; $i < $num_posts; $i++ ) {
+                if( in_array( $wp_query->posts[$i]->ID, $sticky_posts ) ) {
+                    $sticky_post = $wp_query->posts[$i];
                     // Remove sticky from current position
-                    array_splice($wp_query->posts, $i, 1);
+                    array_splice( $wp_query->posts, $i, 1 );
                     // Move to front, after other stickies
-                    array_splice($wp_query->posts, $sticky_offset, 0, array($sticky_post));
+                    array_splice( $wp_query->posts, $sticky_offset, 0, array($sticky_post) );
                     // Increment the sticky offset.  The next sticky will be placed at this offset.
                     $sticky_offset++;
                     // Remove post from sticky posts array
-                    $offset = array_search($sticky_post->ID, $sticky_posts);
-                    unset($sticky_posts[ $offset ]);
+                    $offset = array_search( $sticky_post->ID, $sticky_posts );
+                    unset( $sticky_posts[$offset] );
                 }
             }
         }
@@ -336,7 +332,7 @@ class Categories {
      * @return Categories The *Singleton* instance.
      */
     public static function instance() {
-        if (null === static::$instance) {
+        if( null === static::$instance ) {
             static::$instance = new static();
         }
 

@@ -15,15 +15,20 @@ body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
     -ms-grid-column: 1;
     background-color: transparent;
     z-index: 10;
-    display: -ms-grid;
     display: grid;
     grid-area: desktop;
     max-width: 1200px;
     width: 100vw;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
-    justify-content: start;
     margin-top: 60px;
+
+    & > * {
+      // IE doesn't allow justify-items on container.
+      // Moved to children.
+      justify-self: start;
+
+    }
   }
 
   .fl-col-group:nth-of-type(2) {
@@ -33,7 +38,7 @@ body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
     z-index: 10;
 
     .fl-rich-text,
-      {
+    {
       color: black;
     }
 
@@ -73,7 +78,6 @@ body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
     }
   }
 }
-
 
 
 /*********************
@@ -143,13 +147,13 @@ TABLET 910
     @media only screen and (min-width: $tablet) {
 
       // responsive heros- with text that jumps out from background image on mobile
-      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(1) {
+      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(1) {
         -ms-grid-row: 1;
         -ms-grid-column: 1
       }
 
       // responsive heros- with text that jumps out from background image on mobile
-      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(2) {
+      body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(2) {
         -ms-grid-row: 2;
         -ms-grid-column: 1
       }
@@ -174,7 +178,8 @@ TABLET 910
       }
     }
 
-    .fl-col-group:nth-of-type(4) {}
+    .fl-col-group:nth-of-type(4) {
+    }
   }
 
   body:not(.fl-builder-edit) .text-shift .fl-row-content-wrap .fl-row-content {
@@ -186,7 +191,7 @@ TABLET 910
   }
 
   // responsive heros- with text that jumps out from background image on mobile
-  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(1) {
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(1) {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     z-index: 100;
@@ -194,7 +199,7 @@ TABLET 910
   }
 
   // responsive heros- with text that jumps out from background image on mobile
-  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(2) {
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(2) {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     z-index: 100;
@@ -202,7 +207,7 @@ TABLET 910
   }
 
   // responsive heros- with text that jumps out from background image on mobile
-  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(3) {
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(3) {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     z-index: 1;
@@ -210,7 +215,7 @@ TABLET 910
   }
 
   // responsive heros- with text that jumps out from background image on mobile
-  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content>.fl-col-group:nth-of-type(4) {
+  body.fl-builder .text-shift .fl-row-content-wrap .fl-row-content > .fl-col-group:nth-of-type(4) {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
     z-index: 1;

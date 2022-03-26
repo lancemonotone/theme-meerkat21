@@ -4,7 +4,7 @@
 .stat-wrapper {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-gap: .5em;
+  gap: .5em;
   margin-bottom: .5em;
 }
 .stat-wrapper div {
@@ -28,6 +28,6 @@
   }
   .stat-wrapper {
     grid-template-columns: 1fr 2fr;
-    grid-gap: .3em;
+    gap: .3em;
   }
 }

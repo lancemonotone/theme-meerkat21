@@ -6,7 +6,7 @@ require('constants.php');
 
 class Functions {
     public function __construct() {
-        add_action('after_setup_theme', array(&$this, 'load_libs'));
+        add_action('after_setup_theme', [$this, 'load_libs'], 10);
     }
 
     /**

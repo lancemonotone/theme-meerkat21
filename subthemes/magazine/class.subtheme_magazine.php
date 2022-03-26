@@ -4,7 +4,7 @@ namespace m21;
 
 class Subtheme_Magazine {
     public function __construct() {
-        include('/lib/magazine.php');
+        include('./lib/class.magazine.php');
     }
 }
 

@@ -10,6 +10,8 @@ body.m21.subtheme-brochure {
   @import "partials/brochure_variables";
   @import "partials/breadcrumb_bar";
 
+  border: 5px solid greenyellow;
+
   header {
     background-color: #fff;
   }
@@ -50,7 +52,6 @@ body.m21.subtheme-brochure {
     font-family: $monospace;
     text-transform: uppercase;
     text-decoration: underline;
-    text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
     font-size: 14px;
     font-weight: 500;

@@ -14,7 +14,7 @@
                 <div class="event-text">
                     <div class="event-date">{{ event.StartDateTime|date("D j M") }}</div>
                     <div class="event-title">
-                        <a href="{{ event.permalink }}">{{ event.post_title }}</a>
+                        <a href="{{ event.event_url }}">{{ event.post_title }}</a>
                     </div>
                     <div class="event-details">
                         <div class="event-time-location">{{ event.StartDateTime|date("g:i a") }} {{ event.venue ? 'at ' ~ event.venue }}</div>

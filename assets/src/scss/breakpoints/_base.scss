@@ -36,27 +36,108 @@ h3,
 h4,
 .h4,
 h5,
-.h5 {
+.h5,
+h6,
+.h6 {
   text-rendering: optimizelegibility;
-  font-family: $serif;
+  font-family: EphSlab;
+  font-weight: 500;
 }
 
 h1,
-.h1 {}
+.h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 1.313;
+}
 
 h2,
-.h2 {}
+.h2 {
+  font-size: 32px;
+}
 
 h3,
-.h3 {}
+.h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.167;
+}
 
 h4,
-.h4 {}
+.h4 {
+  font-family: EphGothic ;
+  font-size: 24px;
+  line-height: 1.167;
+}
+
+h4,
+.h4 {
+  font-family: EphGothic ;
+  font-size: 24px;
+  line-height: 1.167;
+}
 
 h5,
-.h5 {}
+.h5 {
+  font-family: EphSerif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
 
+h6,
+.h6 {
+  font-family: EphSlab;
+  font-weight: 400;
+  font-size: 16px;
+}
 
+p {
+  margin: 0 0 1.3em 0;
+}
+
+h1,
+.h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 1.313;
+}
+
+h2,
+.h2 {
+  font-size: 32px;
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 1.167;
+}
+
+h4,
+.h4 {
+  font-family: EphGothic ;
+  font-size: 24px;
+  line-height: 1.167;
+}
+
+h5,
+.h5 {
+  font-family: EphSerif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+h6,
+.h6 {
+  font-family: EphSlab;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+p {
+  margin: 0 0 1.3em 0;
+}
 
 .page-wrap {
   //fallback for when content is too short

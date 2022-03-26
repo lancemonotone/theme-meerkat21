@@ -1,0 +1,1 @@
+!function(){"use strict";window.jQuery,window.wp.i18n,window.wp.blocks,window.wp.element,window.wp.editor}();

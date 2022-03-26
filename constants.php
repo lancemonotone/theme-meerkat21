@@ -12,10 +12,7 @@ define('CAPABILITY_THRESH', 'edit_theme_options');
 define('THEME_URL', get_template_directory_uri());
 define('THEME_DIR', get_template_directory());
 
-define('THEME_IMG_URL', THEME_URL . '/assets/img');
+define('THEME_IMG_URL', THEME_URL . '/img');
 
-define('THEME_JS_PATH', THEME_DIR . '/assets/build/js');
-define('THEME_JS_URL', THEME_URL . '/assets/build/js');
-
-define('THEME_CSS_PATH', THEME_DIR . '/assets/build/css');
-define('THEME_CSS_URL', THEME_URL . '/assets/build/css');
+define('THEME_ASSETS_PATH', THEME_DIR . '/assets/build');
+define('THEME_ASSETS_URL', THEME_URL . '/assets/build');

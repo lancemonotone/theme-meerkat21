@@ -13,7 +13,7 @@ $hide_site_nav =   get_field('hide_site_nav') //page level
 $hide_sidebar =    get_field('hide_sidebar') //page level
                ||  get_field('remove_sidebar', 'option'); //site wide   
 
-$hide_site_nav = true; ///temp turn off left sidebar everywhere
+//$hide_site_nav = true; ///temp turn off left sidebar everywhere
                
 $fullwidth = $hide_site_nav && $hide_sidebar;
 

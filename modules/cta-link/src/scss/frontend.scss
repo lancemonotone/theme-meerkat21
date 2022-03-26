@@ -12,13 +12,12 @@ BASE
     padding-bottom: 8px;
 }
 a.cta-link{
-    border: 0; 
-    border-radius: 0.25rem; 
+    border: 0;
+    border-radius: 0.25rem;
     background: none;
     font-family:  IBM Plex Mono, monospace;
     text-transform: uppercase;
     text-decoration: underline;
-    text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
     font-style: normal;
     font-family: IBM Plex Mono, monospace;
@@ -42,7 +41,7 @@ a.cta-link{
     font-size: 14px;
     .sep{
         display: none;
-        padding: 0 4px 0 6px; 
+        padding: 0 4px 0 6px;
 
     }
 }

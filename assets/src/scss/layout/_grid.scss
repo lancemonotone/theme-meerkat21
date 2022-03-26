@@ -1,6 +1,6 @@
 /*********************
 Component: Columns
-* 
+*
 * use .wms-cols to produce auto-growing row of equal sized columns
 * add width class to the column itself to alter the sizes (_width.scss)
 * use .wms-cols-{n} to fix the number of columns in your grid container
@@ -20,7 +20,7 @@ Component: Columns
       flex-basis: 0;
       flex-grow: 1;
       flex-shrink: 1;
-      padding: #{$column_gap/2} 0;
+      padding: calc(#{$column_gap}/2) 0;
       width: auto;
       //fence post
       &:first-of-type{
@@ -39,7 +39,7 @@ TABLET 910
   .wms-cols {
     flex-direction: row;
     & > * {
-      padding: $column_gap #{$column_gap/2};
+      padding: $column_gap calc(#{$column_gap}/2);
       &:first-of-type{
         padding-left: 0;
       }
@@ -48,13 +48,12 @@ TABLET 910
       }
     }
   }
- 
+
   //fixed columns 1-12 .wms-cols-{n}
   @for $i from 1 through 12 {
-    .wms-cols-#{$i}{	
-      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    .wms-cols-#{$i}{
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr)); // this will not work in IE, see note above
       display: grid;
-      grid-gap: $column_gap; //old browsers
       gap: $column_gap;
       padding: $column_gap 0;
     };
