@@ -31,16 +31,25 @@ class Subtheme {
         $this->load_subtheme();
     }
 
-    function get_subtheme(){
+    function get_subtheme() {
         return get_theme_mod( $this->subtheme_option_name );
     }
 
-    function get_path(){
+    function get_path() {
         return $this->subtheme_dir . $this->get_subtheme();
     }
 
-    function get_url(){
+    function get_url() {
         return $this->subtheme_url . $this->get_subtheme();
+    }
+
+    /**
+     * Don't load non-existent 'default' subtheme assets
+     *
+     * @return bool
+     */
+    function using_subtheme(){
+        return $this->get_subtheme() !== 'default';
     }
 
     function add_body_class($classes) {
@@ -74,11 +83,11 @@ class Subtheme {
 
         // radio button choices
         $customizer->add_control( $this->subtheme_option_name, array(
-            'type'    => 'radio',
-            'label'   => 'Select a subtheme:',
-            'section' => 'subtheme',
+            'type'     => 'radio',
+            'label'    => 'Select a subtheme:',
+            'section'  => 'subtheme',
             'priority' => 20,
-            'choices' => $this->all_subthemes,
+            'choices'  => $this->all_subthemes,
         ) );
     }
 
@@ -86,24 +95,27 @@ class Subtheme {
      * Load functions and assets for current subtheme.
      */
     function load_subtheme() {
-        // @todo this is a dumb way to do this. Don't hardcode 'class.subtheme'. Make it smarter.
-        $functions = $this->get_path() . '/class.subtheme_' . $this->get_subtheme() . '.php';
+        if( $this->using_subtheme() ) {
+            $functions = $this->get_path() . '/class.subtheme_' . $this->subtheme_name . '.php';
 
-        // Subthemes can have function files like regular themes
-        if( file_exists( $functions ) ) {
-            include($functions);
+            // Subthemes can have function files like regular themes
+            if( file_exists( $functions ) ) {
+                include($functions);
+            }
         }
     }
 
     function enqueue_assets() {
-        $deps = include $this->get_path() . '/assets/build/frontend.asset.php';
-        $handle = __NAMESPACE__ . '-subtheme-' . $this->get_subtheme();
+        if( $this->using_subtheme() ) {
+            $deps = include $this->get_path() . '/assets/build/frontend.asset.php';
+            $handle = __NAMESPACE__ . '-subtheme-' . $this->get_subtheme();
 
-        $js_url = $this->get_url() . '/assets/build/frontend.js';
-        wp_enqueue_script( $handle . '-js', $js_url, $deps['dependencies'], $deps['version'], true );
+            $js_url = $this->get_url() . '/assets/build/frontend.js';
+            wp_enqueue_script( $handle . '-js', $js_url, $deps['dependencies'], $deps['version'], true );
 
-        $css_url = $this->get_url() . '/assets/build/frontend.css';
-        wp_enqueue_style( $handle . '-css', $css_url, null, $deps['version'] );
+            $css_url = $this->get_url() . '/assets/build/frontend.css';
+            wp_enqueue_style( $handle . '-css', $css_url, null, $deps['version'] );
+        }
     }
 
     /**

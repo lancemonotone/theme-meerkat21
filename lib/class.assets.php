@@ -3,7 +3,7 @@
 namespace m21;
 
 /**
- * include app js and other styles/scripts
+ * Include app js and other styles/scripts
  */
 class Assets {
     public function __construct() {
